@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static wagtailimages_tags wagtailcore_tags %}
+
+{% block content %}
+
+      <!-- Services -->
+      <section class="container mb-5 pb-2 pb-md-4 pb-lg-5">
+        <div class="card border-0 bg-secondary p-md-5 px-sm-2 pt-4 pb-3">
+          <div class="card-body mx-auto" style="max-width: 860px;">
+            <h2 class="h1 mb-4 text-center">{{ page.title }}</h2>
+            <p class="mb-4 pb-3 fs-lg text-center text-muted">We fully understand your business. If you need to update something, we are more than happy to help you with the services we are providing.</p>
+
+            <!-- Accordion: Alternative style -->
+            <div class="accordion" id="accordion-services">
+
+              <!-- Item -->
+              {% for answer in answers %}
+              <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                <h3 class="accordion-header" id="heading-1">
+                  <button class="accordion-button fs-xl shadow-none rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1">{{ answer }}</button>
+                </h3>
+                <div class="accordion-collapse collapse show" id="collapse-1" aria-labelledby="heading-1" data-bs-parent="#accordion-services">
+                  <div class="accordion-body pt-0">
+                    <div class="d-flex flex-md-row flex-column align-items-md-center">
+                      <img src="{% static 'img/landing/digital-agency/services/01.png' %}" width="200" alt="Digital Marketing" class="me-md-4 mb-md-0 mb-3">
+                      <div class="ps-md-3">
+                        <p class="mb-0">{{ question }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+{% include "includes/footer.html" %}
+{% endblock content %}

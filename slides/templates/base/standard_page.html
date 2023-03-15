@@ -1,0 +1,1050 @@
+{% extends "base.html" %}
+{% load static wagtailimages_tags wagtailcore_tags %}
+
+
+{% block content %}
+        <h2 class="h1 pt-5 text-center pb-md-4"></h2>
+        <h2 class="h1 pt-5 text-center pb-md-4">Презентации</h2>
+        <p class="fs-lg text-muted text-center pb-4 mb-2 mb-lg-3">Мы специализируемся на создании презентаций.</p>
+
+            <!-- Page container 1-->
+      <section class="position-relative mt-md-4 border-top border-bottom border-light">
+
+        <!-- Swiper tabs (Project images) -->
+        <div class="swiper-tabs position-md-absolute top-0 end-0 w-md-50 h-100">
+          <div id="project-11" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0  active" style="background-image: url({% static 'img/portfolio/pict/11.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+          <div id="project-12" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0 " style="background-image: url({% static 'img/portfolio/pict/12.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+          <div id="project-13" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0 " style="background-image: url({% static 'img/portfolio/pict/13.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+        </div>
+
+
+        <div class="container pt-lg-2">
+          <div class="row">
+            <div class="col-lg-5 col-md-6">
+  
+              <!-- Project description (Slider) -->
+              <div class="d-none d-lg-block" style="height: 160px;"></div>
+              <div class="d-none d-md-block d-lg-none" style="height: 80px;"></div>
+              <div class="swiper pt-4 pt-md-0" data-swiper-options='{
+                "spaceBetween": 30,
+                "loop": true,
+                "tabs": true,
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "fraction"
+                },
+                "navigation": {
+                  "prevEl": ".btn-prev",
+                  "nextEl": ".btn-next"
+                }
+              }'>
+                <div class="swiper-wrapper">
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-11">
+                    <h3 class="h3 mb-4">Презентация для бренда мясной продукции</h3>
+                    <p class="pb-3 mb-3">Задача: Разработать коммерческую презентацию «под ключ», создание текста и разработка дизайна.</p>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-12">
+                    <h3 class="h3 mb-4">Презентация для бренда мясной продукции</h3>
+                    <p class="pb-3 mb-3">Создавая текст для этой презентации, мы придерживались более имиджевого формата повествования, старались сделать упор не на продукте, а на ценностях, которые представляет бренд.</p>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-13">
+                    <h3 class="h3 mb-4">Презентация для бренда мясной продукции</h3>
+                    <p class="pb-3 mb-3">Основной упор на слайдах сделан на фотографиях, в качестве акцентных цветов выбрали бордо (основной цвет логотипа) и песочный цвет. Для создания ритма в презентации оставили пространства с воздухом и чистым фоном белого цвета.</p>
+                  </div>
+                </div>
+
+
+                <!-- Prev / Next buttons + Counter -->
+                <div class="d-flex align-items-center ps-2 pb-5">
+                  <button type="button" class="btn btn-prev btn-icon btn-sm position-static">
+                    <i class="bx bx-chevron-left"></i>
+                  </button>
+                  <div class="swiper-pagination position-static w-auto mx-3" style="min-width: 30px;"></div>
+                  <button type="button" class="btn btn-next btn-icon btn-sm position-static">
+                    <i class="bx bx-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+            <!-- Page container 2-->
+      <section class="position-relative border-bottom border-light">
+
+        <!-- Swiper tabs (Project images) -->
+        <div class="swiper-tabs position-md-absolute top-0 end-0 w-md-50 h-100">
+          <div id="project-21" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0  active" style="background-image: url({% static 'img/portfolio/pict/21.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+          <div id="project-22" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0 " style="background-image: url({% static 'img/portfolio/pict/22.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+          <div id="project-23" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0 " style="background-image: url({% static 'img/portfolio/pict/23.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+        </div>
+
+
+        <div class="container pt-lg-2">
+          <div class="row">
+            <div class="col-lg-5 col-md-6">
+  
+              <!-- Project description (Slider) -->
+              <div class="d-none d-lg-block" style="height: 160px;"></div>
+              <div class="d-none d-md-block d-lg-none" style="height: 80px;"></div>
+              <div class="swiper pt-4 pt-md-0" data-swiper-options='{
+                "spaceBetween": 30,
+                "loop": true,
+                "tabs": true,
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "fraction"
+                },
+                "navigation": {
+                  "prevEl": ".btn-prev",
+                  "nextEl": ".btn-next"
+                }
+              }'>
+                <div class="swiper-wrapper">
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-21">
+                    <h3 class="h3 mb-4">Презентация магазина аксессуаров для мужчин</h3>
+                    <p class="pb-3 mb-3">Задача: Разработать стильную презентацию по структуре заказчика для представления бренда.</p>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-22">
+                    <h3 class="h3 mb-4">Презентация магазина аксессуаров для мужчин</h3>
+                    <p class="pb-3 mb-3">Заказчик уже подготовил структуру и примерные тексты, которые необходимо было разместить на слайдах, также нам были предоставлены имиджевые фотографии продукции, что облегчало процесс создания презентации.</p>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-23">
+                    <h3 class="h3 mb-4">Презентация магазина аксессуаров для мужчин</h3>
+                    <p class="pb-3 mb-3">Прежде чем приступить к верстке презентации дизайнер создал концепцию проекта, подготовив 4 слайда, учитывающих айдентику бренда. Основной акцент, конечно же, был сосредоточен на фотографиях бренда, поэтому для презентации мы выбрали прямоугольный стиль представления информации. </p>
+                  </div>
+                </div>
+
+
+                <!-- Prev / Next buttons + Counter -->
+                <div class="d-flex align-items-center ps-2 pb-5">
+                  <button type="button" class="btn btn-prev btn-icon btn-sm position-static">
+                    <i class="bx bx-chevron-left"></i>
+                  </button>
+                  <div class="swiper-pagination position-static w-auto mx-3" style="min-width: 30px;"></div>
+                  <button type="button" class="btn btn-next btn-icon btn-sm position-static">
+                    <i class="bx bx-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+            <!-- Page container 3-->
+      <section class="position-relative border-bottom border-light">
+
+        <!-- Swiper tabs (Project images) -->
+        <div class="swiper-tabs position-md-absolute top-0 end-0 w-md-50 h-100">
+          <div id="project-31" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0  active" style="background-image: url({% static 'img/portfolio/pict/31.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+          <div id="project-32" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0 " style="background-image: url({% static 'img/portfolio/pict/32.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+          <div id="project-33" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0 " style="background-image: url({% static 'img/portfolio/pict/33.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+        </div>
+
+
+        <div class="container pt-lg-2">
+          <div class="row">
+            <div class="col-lg-5 col-md-6">
+  
+              <!-- Project description (Slider) -->
+              <div class="d-none d-lg-block" style="height: 160px;"></div>
+              <div class="d-none d-md-block d-lg-none" style="height: 80px;"></div>
+              <div class="swiper pt-4 pt-md-0" data-swiper-options='{
+                "spaceBetween": 30,
+                "loop": true,
+                "tabs": true,
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "fraction"
+                },
+                "navigation": {
+                  "prevEl": ".btn-prev",
+                  "nextEl": ".btn-next"
+                }
+              }'>
+                <div class="swiper-wrapper">
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-31">
+                    <h3 class="h3 mb-4">Корпоративная презентация для бренда гель-лаков</h3>
+                    <p class="pb-3 mb-3">Задача: создать презентацию о бренде средств для маникюра.</p>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-32">
+                    <h3 class="h3 mb-4">Корпоративная презентация для бренда гель-лаков</h3>
+                    <p class="pb-3 mb-3">Главная цель этого проекта заключалась в том, чтобы рассказать о бренде Artex, показать его преимущества и предложить потенциальным партнерам сотрудничество с целью распространения продукции бренда. </p>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-33">
+                    <h3 class="h3 mb-4">Корпоративная презентация для бренда гель-лаков</h3>
+                    <p class="pb-3 mb-3">В айдентике бренда используются строгие тонкие линии, глубокие темные тона и минимализм. Именно от этих деталей мы отталкивались при создании презентации. А также добавили дополнительный акцент и некоторые элементы выполнили в салатовом цвете.</p>
+                  </div>
+                </div>
+
+
+                <!-- Prev / Next buttons + Counter -->
+                <div class="d-flex align-items-center ps-2 pb-5">
+                  <button type="button" class="btn btn-prev btn-icon btn-sm position-static">
+                    <i class="bx bx-chevron-left"></i>
+                  </button>
+                  <div class="swiper-pagination position-static w-auto mx-3" style="min-width: 30px;"></div>
+                  <button type="button" class="btn btn-next btn-icon btn-sm position-static">
+                    <i class="bx bx-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+            <!-- Page container 4-->
+      <section class="position-relative border-bottom border-light">
+
+        <!-- Swiper tabs (Project images) -->
+        <div class="swiper-tabs position-md-absolute top-0 end-0 w-md-50 h-100">
+          <div id="project-41" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0  active" style="background-image: url({% static 'img/portfolio/pict/41.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+          <div id="project-42" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0 " style="background-image: url({% static 'img/portfolio/pict/42.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+          <div id="project-43" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0 " style="background-image: url({% static 'img/portfolio/pict/43.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+        </div>
+
+
+        <div class="container pt-lg-2">
+          <div class="row">
+            <div class="col-lg-5 col-md-6">
+  
+              <!-- Project description (Slider) -->
+              <div class="d-none d-lg-block" style="height: 160px;"></div>
+              <div class="d-none d-md-block d-lg-none" style="height: 80px;"></div>
+              <div class="swiper pt-4 pt-md-0" data-swiper-options='{
+                "spaceBetween": 30,
+                "loop": true,
+                "tabs": true,
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "fraction"
+                },
+                "navigation": {
+                  "prevEl": ".btn-prev",
+                  "nextEl": ".btn-next"
+                }
+              }'>
+                <div class="swiper-wrapper">
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-41">
+                    <h3 class="h3 mb-4">Презентация для производителя эксклюзивной мебели и декора</h3>
+                    <p class="pb-3 mb-3">Задача: презентация на 20 слайдов с уникальным текстом и визуальным оформлением, соответствующим фирменным цветам компании.</p>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-42">
+                    <h3 class="h3 mb-4">Презентация для производителя эксклюзивной мебели и декора</h3>
+                    <p class="pb-3 mb-3">Текст был написан с «нуля» с учетом производственных возможностей организации, а также в рамках пожеланий заказчика. В презентацию мы постарались включить все возможные смыслы, чтобы максимально закрыть возражения будущих клиентов.</p>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-43">
+                    <h3 class="h3 mb-4">Презентация для производителя эксклюзивной мебели и декора</h3>
+                    <p class="pb-3 mb-3">Презентация получилась максимально подробной, что поможет лучше закрыть возражения целевой аудитории и сподвигнуть людей приобретать мебель у молодого бренда.</p>
+                  </div>
+                </div>
+
+
+                <!-- Prev / Next buttons + Counter -->
+                <div class="d-flex align-items-center ps-2 pb-5">
+                  <button type="button" class="btn btn-prev btn-icon btn-sm position-static">
+                    <i class="bx bx-chevron-left"></i>
+                  </button>
+                  <div class="swiper-pagination position-static w-auto mx-3" style="min-width: 30px;"></div>
+                  <button type="button" class="btn btn-next btn-icon btn-sm position-static">
+                    <i class="bx bx-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+            <!-- Page container 5-->
+      <section class="position-relative border-bottom border-light">
+
+        <!-- Swiper tabs (Project images) -->
+        <div class="swiper-tabs position-md-absolute top-0 end-0 w-md-50 h-100">
+          <div id="project-51" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0  active" style="background-image: url({% static 'img/portfolio/pict/51.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+          <div id="project-52" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0 " style="background-image: url({% static 'img/portfolio/pict/52.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+          <div id="project-53" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0 " style="background-image: url({% static 'img/portfolio/pict/53.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+        </div>
+
+
+        <div class="container pt-lg-2">
+          <div class="row">
+            <div class="col-lg-5 col-md-6">
+  
+              <!-- Project description (Slider) -->
+              <div class="d-none d-lg-block" style="height: 160px;"></div>
+              <div class="d-none d-md-block d-lg-none" style="height: 80px;"></div>
+              <div class="swiper pt-4 pt-md-0" data-swiper-options='{
+                "spaceBetween": 30,
+                "loop": true,
+                "tabs": true,
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "fraction"
+                },
+                "navigation": {
+                  "prevEl": ".btn-prev",
+                  "nextEl": ".btn-next"
+                }
+              }'>
+                <div class="swiper-wrapper">
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-51">
+                    <h3 class="h3 mb-4">Коммерческая презентация для бренда музыкальных инструментов и акустических систем</h3>
+                    <p class="pb-3 mb-3">Данная презентация является элементом корпоративного маркетинга, поэтому при разработке дизайна мы полагались на айдентику бренда. Важно было не просто наложить фирменный стиль презентации на слайды PowerPoint, а адаптировать их в согласии с темой, стилем преподнесения информации и созданными текстами.</p>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-52">
+                    <h3 class="h3 mb-4">Коммерческая презентация для бренда музыкальных инструментов и акустических систем</h3>
+                    <p class="pb-3 mb-3"> Идея презентации строится в сегментации целевой аудитории и представления каждому потенциальному заказчику фокусного предложения. Также мы адаптировали фирменный стиль бренда под слайды PowerPoint, внеся в презентацию идею легкости и минимализма.</p>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-53">
+                    <h3 class="h3 mb-4">Коммерческая презентация для бренда музыкальных инструментов и акустических систем</h3>
+                    <p class="pb-3 mb-3">Каждый слайд проработан с позиции выгод для потребителей, что помогает аудитории с первых секунд выявить основные месседжи и преимущества от использования продукции. Такой тезисный подход помогает экономить время ца и создавать направленные тексты с четким посылом.</p>
+                  </div>
+                </div>
+
+
+                <!-- Prev / Next buttons + Counter -->
+                <div class="d-flex align-items-center ps-2 pb-5">
+                  <button type="button" class="btn btn-prev btn-icon btn-sm position-static">
+                    <i class="bx bx-chevron-left"></i>
+                  </button>
+                  <div class="swiper-pagination position-static w-auto mx-3" style="min-width: 30px;"></div>
+                  <button type="button" class="btn btn-next btn-icon btn-sm position-static">
+                    <i class="bx bx-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+            <!-- Page container 6-->
+      <section class="position-relative border-bottom border-light">
+
+        <!-- Swiper tabs (Project images) -->
+        <div class="swiper-tabs position-md-absolute top-0 end-0 w-md-50 h-100">
+          <div id="project-61" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0  active" style="background-image: url({% static 'img/portfolio/pict/61.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+          <div id="project-62" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0 " style="background-image: url({% static 'img/portfolio/pict/62.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+          <div id="project-63" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0 " style="background-image: url({% static 'img/portfolio/pict/63.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+        </div>
+
+
+        <div class="container pt-lg-2">
+          <div class="row">
+            <div class="col-lg-5 col-md-6">
+  
+              <!-- Project description (Slider) -->
+              <div class="d-none d-lg-block" style="height: 160px;"></div>
+              <div class="d-none d-md-block d-lg-none" style="height: 80px;"></div>
+              <div class="swiper pt-4 pt-md-0" data-swiper-options='{
+                "spaceBetween": 30,
+                "loop": true,
+                "tabs": true,
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "fraction"
+                },
+                "navigation": {
+                  "prevEl": ".btn-prev",
+                  "nextEl": ".btn-next"
+                }
+              }'>
+                <div class="swiper-wrapper">
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-61">
+                    <h3 class="h3 mb-4">Презентация для мукомольного производителя</h3>
+                    <p class="pb-3 mb-3">Задача: разработать подробную презентацию на 21 слайд, рассказывающую о всей структуре предприятия</p>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-62">
+                    <h3 class="h3 mb-4">Презентация для мукомольного производителя</h3>
+                    <p class="pb-3 mb-3">Заказчик предоставил несколько старых презентаций, которые требовалось адаптировать под новую презентацию, взяв наиболее ценную информацию. Структуру для этого проекта мы выбрали стандартную, выстроив повествование от общих смыслов к более узким и частным.</p>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-63">
+                    <h3 class="h3 mb-4">Презентация для мукомольного производителя</h3>
+                    <p class="pb-3 mb-3">Готовый проект был быстро утвержден заказчиком, поэтому всего через несколько недель после подписания договора заказчик получил изменяемый оригинал презентации, набор шрифтов и проект в PDF-формате для рассылки презентации по электронной почте.</p>
+                  </div>
+                </div>
+
+
+                <!-- Prev / Next buttons + Counter -->
+                <div class="d-flex align-items-center ps-2 pb-5">
+                  <button type="button" class="btn btn-prev btn-icon btn-sm position-static">
+                    <i class="bx bx-chevron-left"></i>
+                  </button>
+                  <div class="swiper-pagination position-static w-auto mx-3" style="min-width: 30px;"></div>
+                  <button type="button" class="btn btn-next btn-icon btn-sm position-static">
+                    <i class="bx bx-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+            <!-- Page container 7-->
+      <section class="position-relative border-bottom border-light">
+
+        <!-- Swiper tabs (Project images) -->
+        <div class="swiper-tabs position-md-absolute top-0 end-0 w-md-50 h-100">
+          <div id="project-71" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0  active" style="background-image: url({% static 'img/portfolio/pict/71.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+          <div id="project-72" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0 " style="background-image: url({% static 'img/portfolio/pict/72.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+          <div id="project-73" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0 " style="background-image: url({% static 'img/portfolio/pict/73.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+        </div>
+
+
+        <div class="container pt-lg-2">
+          <div class="row">
+            <div class="col-lg-5 col-md-6">
+  
+              <!-- Project description (Slider) -->
+              <div class="d-none d-lg-block" style="height: 160px;"></div>
+              <div class="d-none d-md-block d-lg-none" style="height: 80px;"></div>
+              <div class="swiper pt-4 pt-md-0" data-swiper-options='{
+                "spaceBetween": 30,
+                "loop": true,
+                "tabs": true,
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "fraction"
+                },
+                "navigation": {
+                  "prevEl": ".btn-prev",
+                  "nextEl": ".btn-next"
+                }
+              }'>
+                <div class="swiper-wrapper">
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-71">
+                    <h3 class="h3 mb-4">Презентация для производителя игрушек</h3>
+                    <p class="pb-3 mb-3">Задача: Яркая презентация с убедительными коммерческими текстами.</p>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-72">
+                    <h3 class="h3 mb-4">Презентация для производителя игрушек</h3>
+                    <p class="pb-3 mb-3">После получения технического задания мы приступили к созданию структуры текста. Необходимо было последовательно и выгодно осветить важные сведения о производстве, показать каталог продукции и добавить информацию, касающуюся условий поставки и оплаты.</p>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-73">
+                    <h3 class="h3 mb-4">Презентация для производителя игрушек</h3>
+                    <p class="pb-3 mb-3">В начале верстки мы расставили крупные визуальные блоки, добавил фигуры, примитивы, тексты и области для заливки фотографий. После разместили на каждом слайде иконки, изображения и мелкие детали улучшающие внешний облик страниц.</p>
+                  </div>
+                </div>
+
+
+                <!-- Prev / Next buttons + Counter -->
+                <div class="d-flex align-items-center ps-2 pb-5">
+                  <button type="button" class="btn btn-prev btn-icon btn-sm position-static">
+                    <i class="bx bx-chevron-left"></i>
+                  </button>
+                  <div class="swiper-pagination position-static w-auto mx-3" style="min-width: 30px;"></div>
+                  <button type="button" class="btn btn-next btn-icon btn-sm position-static">
+                    <i class="bx bx-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+            <!-- Page container 8-->
+      <section class="position-relative border-bottom border-light">
+
+        <!-- Swiper tabs (Project images) -->
+        <div class="swiper-tabs position-md-absolute top-0 end-0 w-md-50 h-100">
+          <div id="project-81" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0  active" style="background-image: url({% static 'img/portfolio/pict/81.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+          <div id="project-82" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0 " style="background-image: url({% static 'img/portfolio/pict/82.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+          <div id="project-83" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0 " style="background-image: url({% static 'img/portfolio/pict/83.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+        </div>
+
+
+        <div class="container pt-lg-2">
+          <div class="row">
+            <div class="col-lg-5 col-md-6">
+  
+              <!-- Project description (Slider) -->
+              <div class="d-none d-lg-block" style="height: 160px;"></div>
+              <div class="d-none d-md-block d-lg-none" style="height: 80px;"></div>
+              <div class="swiper pt-4 pt-md-0" data-swiper-options='{
+                "spaceBetween": 30,
+                "loop": true,
+                "tabs": true,
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "fraction"
+                },
+                "navigation": {
+                  "prevEl": ".btn-prev",
+                  "nextEl": ".btn-next"
+                }
+              }'>
+                <div class="swiper-wrapper">
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-81">
+                    <h3 class="h3 mb-4">Коммерческая презентация для продуктового бренда</h3>
+                    <p class="pb-3 mb-3">Задача: создать презентацию для рассылки о производственном кооперативе, представив линейку продукции.</p>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-82">
+                    <h3 class="h3 mb-4">Коммерческая презентация для продуктового бренда</h3>
+                    <p class="pb-3 mb-3">Начало презентации посвятили рассказу о производственном комплексе, показали особенности производства, преимущества оригинальной рецептуры продукции. Следующие слайды включали каталог товаров и рассказывали об особенностях и преимуществах повидла, конфитюров, джемов, соусов и пюре, которые производит предприятие.</p>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-83">
+                    <h3 class="h3 mb-4">Коммерческая презентация для продуктового бренда</h3>
+                    <p class="pb-3 mb-3">Каждую версию презентации заказчик получил в двух форматах: PDF-версию и изменяемую PPTX-версию. Также были представлены шрифты, используемые в презентации.</p>
+                  </div>
+                </div>
+
+
+                <!-- Prev / Next buttons + Counter -->
+                <div class="d-flex align-items-center ps-2 pb-5">
+                  <button type="button" class="btn btn-prev btn-icon btn-sm position-static">
+                    <i class="bx bx-chevron-left"></i>
+                  </button>
+                  <div class="swiper-pagination position-static w-auto mx-3" style="min-width: 30px;"></div>
+                  <button type="button" class="btn btn-next btn-icon btn-sm position-static">
+                    <i class="bx bx-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+            <!-- Page container 9-->
+      <section class="position-relative border-bottom border-light">
+
+        <!-- Swiper tabs (Project images) -->
+        <div class="swiper-tabs position-md-absolute top-0 end-0 w-md-50 h-100">
+          <div id="project-91" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0  active" style="background-image: url({% static 'img/portfolio/pict/91.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+          <div id="project-92" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0 " style="background-image: url({% static 'img/portfolio/pict/92.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+          <div id="project-93" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0 " style="background-image: url({% static 'img/portfolio/pict/93.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+        </div>
+
+
+        <div class="container pt-lg-2">
+          <div class="row">
+            <div class="col-lg-5 col-md-6">
+  
+              <!-- Project description (Slider) -->
+              <div class="d-none d-lg-block" style="height: 160px;"></div>
+              <div class="d-none d-md-block d-lg-none" style="height: 80px;"></div>
+              <div class="swiper pt-4 pt-md-0" data-swiper-options='{
+                "spaceBetween": 30,
+                "loop": true,
+                "tabs": true,
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "fraction"
+                },
+                "navigation": {
+                  "prevEl": ".btn-prev",
+                  "nextEl": ".btn-next"
+                }
+              }'>
+                <div class="swiper-wrapper">
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-91">
+                    <h3 class="h3 mb-4">Презентация о компании настольных игр</h3>
+                    <p class="pb-3 mb-3">Задача: создание презентации на 14 листов с последовательным рассказом о деятельности и преимуществах бренда.</p>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-92">
+                    <h3 class="h3 mb-4">Презентация о компании настольных игр</h3>
+                    <p class="pb-3 mb-3">В данном случае презентация должна нести чисто информационный характер, без явной продажи, ведь предназначался для потенциальных арендодателей и партнеров с целью ознакомления с деятельностью холдинга и его масштабами.</p>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-93">
+                    <h3 class="h3 mb-4">Презентация о компании настольных игр</h3>
+                    <p class="pb-3 mb-3">Самым сложным процессом в этой работе было структурирование информации, а также раскрытие на слайдах реально ценных и важных преимуществ и выгод холдинга.</p>
+                  </div>
+                </div>
+
+
+                <!-- Prev / Next buttons + Counter -->
+                <div class="d-flex align-items-center ps-2 pb-5">
+                  <button type="button" class="btn btn-prev btn-icon btn-sm position-static">
+                    <i class="bx bx-chevron-left"></i>
+                  </button>
+                  <div class="swiper-pagination position-static w-auto mx-3" style="min-width: 30px;"></div>
+                  <button type="button" class="btn btn-next btn-icon btn-sm position-static">
+                    <i class="bx bx-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+            <!-- Page container 10-->
+      <section class="position-relative border-bottom border-light">
+
+        <!-- Swiper tabs (Project images) -->
+        <div class="swiper-tabs position-md-absolute top-0 end-0 w-md-50 h-100">
+          <div id="project-101" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0  active" style="background-image: url({% static 'img/portfolio/pict/101.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+          <div id="project-102" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0 " style="background-image: url({% static 'img/portfolio/pict/102.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+          <div id="project-103" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0 " style="background-image: url({% static 'img/portfolio/pict/103.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+        </div>
+
+
+        <div class="container pt-lg-2">
+          <div class="row">
+            <div class="col-lg-5 col-md-6">
+  
+              <!-- Project description (Slider) -->
+              <div class="d-none d-lg-block" style="height: 160px;"></div>
+              <div class="d-none d-md-block d-lg-none" style="height: 80px;"></div>
+              <div class="swiper pt-4 pt-md-0" data-swiper-options='{
+                "spaceBetween": 30,
+                "loop": true,
+                "tabs": true,
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "fraction"
+                },
+                "navigation": {
+                  "prevEl": ".btn-prev",
+                  "nextEl": ".btn-next"
+                }
+              }'>
+                <div class="swiper-wrapper">
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-101">
+                    <h3 class="h3 mb-4">Презентация гидравлического и пневматического оборудования</h3>
+                    <p class="pb-3 mb-3">Задача: создать классическую презентацию о компании с каталогом промышленного оборудования. Указать характеристики инструментов и преимущества компании.</p>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-102">
+                    <h3 class="h3 mb-4">Презентация гидравлического и пневматического оборудования</h3>
+                    <p class="pb-3 mb-3">Мы собрали всю представленную информацию, проанализировали цели проекта и целевую аудиторию, а после приступили к структурированию данных.</p>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-103">
+                    <h3 class="h3 mb-4">Презентация гидравлического и пневматического оборудования</h3>
+                    <p class="pb-3 mb-3">В презентации мы рассказали о процессе проектирования оборудования, о сервисном обслуживании и о собственном магазине по продаже техники. Кроме этого посвятили несколько слайдов преимуществам компании и выгодам, которые получит заказчик от сотрудничества с организацией.</p>
+                  </div>
+                </div>
+
+
+                <!-- Prev / Next buttons + Counter -->
+                <div class="d-flex align-items-center ps-2 pb-5">
+                  <button type="button" class="btn btn-prev btn-icon btn-sm position-static">
+                    <i class="bx bx-chevron-left"></i>
+                  </button>
+                  <div class="swiper-pagination position-static w-auto mx-3" style="min-width: 30px;"></div>
+                  <button type="button" class="btn btn-next btn-icon btn-sm position-static">
+                    <i class="bx bx-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+            <!-- Page container 11-->
+      <section class="position-relative border-bottom border-light">
+
+        <!-- Swiper tabs (Project images) -->
+        <div class="swiper-tabs position-md-absolute top-0 end-0 w-md-50 h-100">
+          <div id="project-111" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0  active" style="background-image: url({% static 'img/portfolio/pict/111.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+          <div id="project-112" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0 " style="background-image: url({% static 'img/portfolio/pict/112.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+          <div id="project-113" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0 " style="background-image: url({% static 'img/portfolio/pict/113.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+        </div>
+
+
+        <div class="container pt-lg-2">
+          <div class="row">
+            <div class="col-lg-5 col-md-6">
+  
+              <!-- Project description (Slider) -->
+              <div class="d-none d-lg-block" style="height: 160px;"></div>
+              <div class="d-none d-md-block d-lg-none" style="height: 80px;"></div>
+              <div class="swiper pt-4 pt-md-0" data-swiper-options='{
+                "spaceBetween": 30,
+                "loop": true,
+                "tabs": true,
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "fraction"
+                },
+                "navigation": {
+                  "prevEl": ".btn-prev",
+                  "nextEl": ".btn-next"
+                }
+              }'>
+                <div class="swiper-wrapper">
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-111">
+                    <h3 class="h3 mb-4">Презентация по проектированию зданий</h3>
+                    <p class="pb-3 mb-3">Задача: создать презентацию, демонстрирующую преимущества проектирования архитектурных элементов, инженерных систем и строительных конструкций. презентация необходима для рассылки потенциальным заказчикам.</p>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-112">
+                    <h3 class="h3 mb-4">Презентация по проектированию зданий</h3>
+                    <p class="pb-3 mb-3">Презентация выполнена в черно-белом исполнении, однако на слайдах расставлены розовые визуальные акценты. Такой подход помогает разнообразить презентацию без чрезмерной нагрузки на слайды и усложнения восприятия информации.</p>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-113">
+                    <h3 class="h3 mb-4">Презентация по проектированию зданий</h3>
+                    <p class="pb-3 mb-3">Разработали презентацию на 28 слайдов, которую можно использовать в качестве материалов для рассылки по электронной почте, можно распечатать в виде каталога для раздатки потенциальным клиентам или демонстрации на выставках.</p>
+                  </div>
+                </div>
+
+
+                <!-- Prev / Next buttons + Counter -->
+                <div class="d-flex align-items-center ps-2 pb-5">
+                  <button type="button" class="btn btn-prev btn-icon btn-sm position-static">
+                    <i class="bx bx-chevron-left"></i>
+                  </button>
+                  <div class="swiper-pagination position-static w-auto mx-3" style="min-width: 30px;"></div>
+                  <button type="button" class="btn btn-next btn-icon btn-sm position-static">
+                    <i class="bx bx-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+            <!-- Page container 12-->
+      <section class="position-relative border-bottom border-light">
+
+        <!-- Swiper tabs (Project images) -->
+        <div class="swiper-tabs position-md-absolute top-0 end-0 w-md-50 h-100">
+          <div id="project-121" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0  active" style="background-image: url({% static 'img/portfolio/pict/121.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+          <div id="project-122" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0 " style="background-image: url({% static 'img/portfolio/pict/122.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+          <div id="project-123" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0 " style="background-image: url({% static 'img/portfolio/pict/123.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+        </div>
+
+
+        <div class="container pt-lg-2">
+          <div class="row">
+            <div class="col-lg-5 col-md-6">
+  
+              <!-- Project description (Slider) -->
+              <div class="d-none d-lg-block" style="height: 160px;"></div>
+              <div class="d-none d-md-block d-lg-none" style="height: 80px;"></div>
+              <div class="swiper pt-4 pt-md-0" data-swiper-options='{
+                "spaceBetween": 30,
+                "loop": true,
+                "tabs": true,
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "fraction"
+                },
+                "navigation": {
+                  "prevEl": ".btn-prev",
+                  "nextEl": ".btn-next"
+                }
+              }'>
+                <div class="swiper-wrapper">
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-121">
+                    <h3 class="h3 mb-4">Презентация для магазина настольных игр</h3>
+                    <p class="pb-3 mb-3">Задача: разработать презентацию в фирменном стиле компании по готовому тексту заказчика.</p>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-122">
+                    <h3 class="h3 mb-4">Презентация для магазина настольных игр</h3>
+                    <p class="pb-3 mb-3">В первую очередь был разработан прототип будущей презентации. В мастер-макете учитывались фирменные цвета компании, шрифты и правила оформления визуальных элементов бренда.</p>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-123">
+                    <h3 class="h3 mb-4">Презентация для магазина настольных игр</h3>
+                    <p class="pb-3 mb-3">В процессе верстки мы уделили особое внимание инфографики презентации, добавив карту распространения магазинов и таймлайн с развитием сети. По просьбе заказчика было изготовлено два титульных листа в красном и белом варианте.</p>
+                  </div>
+                </div>
+
+
+                <!-- Prev / Next buttons + Counter -->
+                <div class="d-flex align-items-center ps-2 pb-5">
+                  <button type="button" class="btn btn-prev btn-icon btn-sm position-static">
+                    <i class="bx bx-chevron-left"></i>
+                  </button>
+                  <div class="swiper-pagination position-static w-auto mx-3" style="min-width: 30px;"></div>
+                  <button type="button" class="btn btn-next btn-icon btn-sm position-static">
+                    <i class="bx bx-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+            <!-- Page container 13-->
+      <section class="position-relative border-bottom border-light">
+
+        <!-- Swiper tabs (Project images) -->
+        <div class="swiper-tabs position-md-absolute top-0 end-0 w-md-50 h-100">
+          <div id="project-131" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0  active" style="background-image: url({% static 'img/portfolio/pict/131.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+          <div id="project-132" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0 " style="background-image: url({% static 'img/portfolio/pict/132.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+          <div id="project-133" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0 " style="background-image: url({% static 'img/portfolio/pict/133.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+        </div>
+
+
+        <div class="container pt-lg-2">
+          <div class="row">
+            <div class="col-lg-5 col-md-6">
+  
+              <!-- Project description (Slider) -->
+              <div class="d-none d-lg-block" style="height: 160px;"></div>
+              <div class="d-none d-md-block d-lg-none" style="height: 80px;"></div>
+              <div class="swiper pt-4 pt-md-0" data-swiper-options='{
+                "spaceBetween": 30,
+                "loop": true,
+                "tabs": true,
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "fraction"
+                },
+                "navigation": {
+                  "prevEl": ".btn-prev",
+                  "nextEl": ".btn-next"
+                }
+              }'>
+                <div class="swiper-wrapper">
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-131">
+                    <h3 class="h3 mb-4">Презентация для строительно-монтажной компании</h3>
+                    <p class="pb-3 mb-3">Задача: создать классическую коммерческую презентацию для рассылки по электронной почте.</p>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-132">
+                    <h3 class="h3 mb-4">Презентация для строительно-монтажной компании</h3>
+                    <p class="pb-3 mb-3">Ставя перед собой задачу показать надежность предприятия, мы решили сосредоточить свое внимание именно на тексте. Подробно рассказать об основных видах услуг, представить описания и преимущества, которые давали бы аудитории полное представление о деятельности организации.</p>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-133">
+                    <h3 class="h3 mb-4">Презентация для строительно-монтажной компании</h3>
+                    <p class="pb-3 mb-3">Для дизайна мы выбрали бело-синюю цветовую гамму и прямоугольную композицию. Это наиболее классическая структура слайдов, которая позволяет сосредоточить все внимание на тексте, а дизайн использовать исключительно в качестве упаковки.</p>
+                  </div>
+                </div>
+
+
+                <!-- Prev / Next buttons + Counter -->
+                <div class="d-flex align-items-center ps-2 pb-5">
+                  <button type="button" class="btn btn-prev btn-icon btn-sm position-static">
+                    <i class="bx bx-chevron-left"></i>
+                  </button>
+                  <div class="swiper-pagination position-static w-auto mx-3" style="min-width: 30px;"></div>
+                  <button type="button" class="btn btn-next btn-icon btn-sm position-static">
+                    <i class="bx bx-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+            <!-- Page container 14-->
+      <section class="position-relative border-bottom border-light">
+
+        <!-- Swiper tabs (Project images) -->
+        <div class="swiper-tabs position-md-absolute top-0 end-0 w-md-50 h-100">
+          <div id="project-141" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0  active" style="background-image: url({% static 'img/portfolio/pict/141.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+          <div id="project-142" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0 " style="background-image: url({% static 'img/portfolio/pict/142.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+          <div id="project-143" class="swiper-tab position-md-absolute w-100 h-100 bg-position-center bg-repeat-0 " style="background-image: url({% static 'img/portfolio/pict/143.png' %});">
+            <div class="ratio ratio-1x1"></div>
+          </div>
+        </div>
+
+
+        <div class="container pt-lg-2">
+          <div class="row">
+            <div class="col-lg-5 col-md-6">
+  
+              <!-- Project description (Slider) -->
+              <div class="d-none d-lg-block" style="height: 160px;"></div>
+              <div class="d-none d-md-block d-lg-none" style="height: 80px;"></div>
+              <div class="swiper pt-4 pt-md-0" data-swiper-options='{
+                "spaceBetween": 30,
+                "loop": true,
+                "tabs": true,
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "fraction"
+                },
+                "navigation": {
+                  "prevEl": ".btn-prev",
+                  "nextEl": ".btn-next"
+                }
+              }'>
+                <div class="swiper-wrapper">
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-141">
+                    <h3 class="h3 mb-4">Каталог продукции в презентации powerpoint</h3>
+                    <p class="pb-3 mb-3">Задача: разработать две презентации в корпоративном оформлении с каталогом продукции заказчика.</p>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-142">
+                    <h3 class="h3 mb-4">Каталог продукции в презентации powerpoint</h3>
+                    <p class="pb-3 mb-3">В начале презентации оформили два лаконичных слайда о компании и ее преимуществах. на всех последующих слайдах представили товары. Завершили презентацию слайдом с координатами для сотрудничества.</p>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="swiper-slide" data-swiper-tab="#project-143">
+                    <h3 class="h3 mb-4">Каталог продукции в презентации powerpoint</h3>
+                    <p class="pb-3 mb-3">Желтый и синий —  корпоративные цвета бренда. Именно под эту цветовую палитру были адаптированы слайды PowerPoint, созданные на основе диагональной геометрии.</p>
+                  </div>
+                </div>
+
+
+                <!-- Prev / Next buttons + Counter -->
+                <div class="d-flex align-items-center ps-2 pb-5">
+                  <button type="button" class="btn btn-prev btn-icon btn-sm position-static">
+                    <i class="bx bx-chevron-left"></i>
+                  </button>
+                  <div class="swiper-pagination position-static w-auto mx-3" style="min-width: 30px;"></div>
+                  <button type="button" class="btn btn-next btn-icon btn-sm position-static">
+                    <i class="bx bx-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {% include "includes/footer.html" %}
+{% endblock content %}

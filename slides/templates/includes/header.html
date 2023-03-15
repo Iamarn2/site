@@ -1,0 +1,70 @@
+{% load static i18n wagtailcore_tags navigation_tags %}
+
+
+      <!-- Navbar -->
+      <!-- Remove "fixed-top" class to make navigation bar scrollable with the page -->
+      <header class="header navbar navbar-expand-lg bg-light shadow-sm fixed-top">
+        <div class="container px-3">
+
+          <!-- Лого -->
+          <a href="/" class="navbar-brand pe-3">
+            <img src="{% static 'img/logo.svg' %}" width="47" alt="Slides">
+            Slides
+          </a>
+
+          <!-- Меню -->
+          <div id="navbarNav" class="offcanvas offcanvas-end">
+
+            <!-- Свернутое меню -->
+            <div class="offcanvas-header border-bottom">
+              <h5 class="offcanvas-title">Меню</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Закрыть"></button>
+            </div>
+            <!-- Основные пункты меню -->
+            <div class="offcanvas-body">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                {# main_menu is defined in base/templatetags/navigation_tags.py #}
+                {% get_site_root as site_root %}
+                {% top_menu parent=site_root calling_page=self %}
+                <li class="nav-item">
+                     <a href="#" class="nav-link" >+7 (920) 365-92-11</a>
+                </li>
+             </ul>
+            </div>
+
+              <!--{% if page %}
+              {% for translation in page.get_translations.live %}
+                  {% get_language_info for translation.locale.language_code as lang %}
+                  <a href="{% pageurl translation %}" class="nav-link" rel="alternate" hreflang="{{ lang.code }}">
+                      {{ lang.name_local }}
+                  </a>
+                  {% endfor %}
+              {% endif %}-->
+
+          <!-- Кнопка для перехода в контакты в свернутом меню-->
+            <div class="offcanvas-header border-top">
+              <a href="https://themes.getbootstrap.com/product/silicon-business-technology-template-ui-kit/" class="btn btn-primary w-100" target="_blank" rel="noopener">
+                Задать вопрос
+              </a>
+            </div>      
+          </div>
+
+          <!-- Переключатель темы -->
+          <div class="form-check form-switch mode-switch pe-lg-1 ms-auto me-4" data-bs-toggle="mode">
+            <input type="checkbox" class="form-check-input" id="theme-mode">
+            <!-- <label class="form-check-label d-none d-sm-block" for="theme-mode">Светлая</label>-->
+            <!-- <label class="form-check-label d-none d-sm-block" for="theme-mode">Темная</label>-->
+          </div>
+
+          <!-- Кнопка для свернутого меню -->
+          <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Кнопка для перехода в контакты в основном меню-->
+          <a href="/kontakty/" class="btn btn-primary btn-sm fs-sm rounded d-none d-lg-inline-flex" target="_blank" rel="noopener">
+            Задать вопрос
+          </a>
+
+        </div>
+      </header>

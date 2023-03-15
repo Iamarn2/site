@@ -1,0 +1,273 @@
+{% extends "base.html" %}
+{% load static wagtailimages_tags wagtailcore_tags  wagtailmetadata_tags %}
+{% block meta_tag %}
+  {% meta_tags %}
+{% endblock %}
+{% block content %}
+
+      <!-- Hero -->
+      <section class="dark-mode vh-100 bg-repeat-0 bg-position-center bg-size-cover overflow-hidden" style="background-image: url({% static 'img/landing/intro/hero/bg.jpg' %});">
+        <div class="container vh-100">
+          <div class="row flex-nowrap vh-100">
+            <div class="col-lg-4 col-md-5 d-flex flex-column text-center text-md-start py-5">
+              <h1 class="display-3 mt-auto mb-4">{{ page.title }}</h1>
+              <p class="lead text-light opacity-70 pb-5 mb-0 mb-md-3">{{ page.hero_text_1 }}<br class="d-none d-md-inline"> {{ page.hero_text_2 }}</p>
+              <div class="d-block mx-auto mx-md-0">
+                <a href="#" class="btn btn-primary btn-lg">{{ page.hero_cta }}</a>
+              </div>
+              <div class="position-relative d-flex align-items-center justify-content-center justify-content-md-start mb-md-4 mb-lg-5 mt-auto">
+                <div class="btn btn-icon btn-secondary rounded-circle">
+                  <i class="bx bx-chevron-down"></i>
+                </div>
+                <a href="#presentaion" class="nav-link stretched-link text-light fw-normal opacity-80 py-2 px-3" data-scroll data-scroll-offset="70">Узнать больше</a>
+              </div>
+            </div>
+            <div class="d-flex flex-shrink-0 align-items-start">
+              {% image page.image_1 width-486 as image_1 %}
+              <img src="{{ image_1.url }}" class="rellax d-block flex-shrink-0 mt-n5" width="486" height="1390" alt="Screens" data-rellax-speed="4" data-disable-parallax-down="md">
+              {% image page.image_2 width-486 as image_2 %}
+              <img src="{{ image_2.url }}" class="rellax d-block flex-shrink-0 mt-5" width="486" height="1470" alt="Screens" data-rellax-speed="-4" data-disable-parallax-down="md">
+              {% image page.image_3 width-486 as image_3 %}
+              <img src="{{ image_3.url }}" class="rellax d-block flex-shrink-0" width="486" height="1480" alt="Screens" data-rellax-speed="4" data-disable-parallax-down="md">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="container py-5 my-2 my-md-4 my-lg-5">
+        <h2 class="h1 text-center pt-1 pt-xl-2 mb-4">Почему нужно выбрать именно нас?</h2>
+        <p class="fs-lg text-muted text-center pb-4 mb-2 mb-lg-3">Сэкономьте свою энергию и наймите эксперта по созданию инфографики.</p>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 pb-xl-3">
+          <div class="col text-center border-end">
+            <div class="card d-table border-0 rounded-circle shadow-sm p-3 mx-auto mb-4">
+              <img src="{% static 'img/landing/software-company/features/01.svg' %}" width="32" alt="Icon">
+            </div>
+            <h3 class="h5 mb-2 mb-lg-0">Обязательное соблюдение сроков выполнения</h3>
+          </div>
+          <div class="col text-center border-end">
+            <div class="card d-table border-0 rounded-circle shadow-sm p-3 mx-auto mb-4">
+              <img src="{% static 'img/landing/software-company/features/02.svg' %}" width="32" alt="Icon">
+            </div>
+            <h3 class="h5 mb-2 mb-lg-0">Создание инфографики любой сложности</h3>
+          </div>
+          <div class="col text-center border-end">
+            <div class="card d-table border-0 rounded-circle shadow-sm p-3 mx-auto mb-4">
+              <img src="{% static 'img/landing/software-company/features/03.svg' %}" width="32" alt="Icon">
+            </div>
+            <h3 class="h5 mb-2 mb-lg-0">До 5 правок без дополнительных затрат</h3>
+          </div>
+          <div class="col text-center">
+            <div class="card d-table border-0 rounded-circle shadow-sm p-3 mx-auto mb-4">
+              <img src="{% static 'img/landing/software-company/features/04.svg' %}" width="32" alt="Icon">
+            </div>
+            <h3 class="h5 mb-2 mb-lg-0">Быстрая обратная связь</h3>
+          </div>
+        </div>
+      </section>
+
+           <!-- Image + Text sections -->
+            <section id="presentaion" class="container pt-5 pb-sm-3 pb-md-3">
+
+                <!-- Row 1 -->
+                <div class="row align-items-lg-center pt -5 pb-5 mb-2 mb-lg-4 mb-xl-5">
+                  <div class="col-md-6 mb-4 mb-md-0">
+                    {% image page.image_service_1 width-600 as image_service_1 %}
+                    <img src="{{ image_service_1.url }}" class="rounded-3" alt="Image">
+                  </div>
+                  <div class="col-md-6">
+                    <div class="ps-xl-5 ms-md-2 ms-lg-4">
+                      <h2 class="h1 mb-3 mb-sm-4">Презентации</h2>
+                      <a href="#" class="d-table badge bg-faded-primary text-primary fs-sm mb-3">Power Point</a>
+                      <p class="mb-4 mb-lg-5">Презентация должна ёмко и убедительно донести ценности и пользу для потребителя. Мы разрабатаем для вас продающие презентации, слайды для выступлений спикеров на конференциях и других мероприятиях, дизайн презентаций для получения инвестиций или заключение выгодных партнёрств, а также продажу компании.</p>
+                      <a href="#" class="btn btn btn-primary shadow-primary">Подробнее</a>
+                    </div>
+                  </div>
+                </div>
+        
+                <!-- Row 2 -->
+                <div class="row align-items-lg-center pt-md-3 pb-5 mb-2 mb-lg-4 mb-xl-5">
+                  <div class="col-md-6 order-md-2 mb-4 mb-md-0">
+                    {% image page.image_service_2 width-600 as image_service_2 %}
+                    <img src="{{ image_service_2.url }}" class="rounded-3" alt="Image">
+                  </div>
+                  <div class="col-md-6 order-md-1">
+                    <div class="pe-xl-5 me-md-2 me-lg-4">
+                      <h2 class="h1 mb-3 mb-sm-4">Google презентации</h2>
+                        <a href="#" class="d-table badge bg-faded-primary text-primary fs-sm mb-3">Google Sheets</a>
+                      <p class="mb-3 mb-sm-4">Приложения Google эффективно работают вместе и помогают экономить время. В Sheets удобно анализировать данные из Google Forms, а графики из Sheets можно вставлять в Google Slides и Docs. На комментарии можно отвечать прямо из Gmail, а в Google Meet легко провести показ таблиц.</p>
+                      <ul class="list-unstyled mb-2 mb-md-3">
+                        <li class="d-flex mb-2">
+                          <i class="bx bx-check text-primary lead me-2"></i>
+                          Анализируйте данные Forms в Sheets
+                        </li>
+                        <li class="d-flex mb-2">
+                          <i class="bx bx-check text-primary lead me-2"></i>
+                          Синхронизируйте данные Sheets с Slides
+                        </li>
+                        <li class="d-flex">
+                          <i class="bx bx-check text-primary lead me-2"></i>
+                          Показывайте обновленные данные в презентации
+                        </li>
+                      </ul>
+                      <a href="#" class="btn btn btn-primary shadow-primary my-4">Подробнее</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="row align-items-lg-center pb-5 mb-2 mb-lg-4 mb-xl-5">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                      {% image page.image_service_3 width-600 as image_service_3 %}
+                      <img src="{{ image_service_3.url }}" class="rounded-3" alt="Image">
+                    </div>
+                    <div class="col-md-6">
+                      <div class="ps-xl-5 ms-md-2 ms-lg-4">
+                        <h2 class="h1 mb-3 mb-sm-4">Инфографика</h2>
+                        <a href="#" class="d-table badge bg-faded-primary text-primary fs-sm mb-3">Power Point</a>
+                        <p class="mb-4 mb-lg-5">Если вам нужно визуализировать процесс, объяснить тему или рассказать новому сотруднику, чего ожидать в первый день, хорошая инфографика может справиться с этой задачей. Привлекайте и удерживайте свою аудиторию с помощью наших работ.</p>
+                        <a href="#" class="btn btn btn-primary shadow-primary">Подробнее</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Row 4 -->
+                  <div class="row align-items-lg-center pt-md-3 pb-5 mb-2 mb-lg-4 mb-xl-5">
+                    <div class="col-md-6 order-md-2 mb-4 mb-md-0">
+                      {% image page.image_service_4 width-600 as image_service_4 %}
+                      <img src="{{ image_service_4.url }}" class="rounded-3" alt="Image">
+                    </div>
+                    <div class="col-md-6 order-md-1">
+                      <div class="pe-xl-5 me-md-2 me-lg-4">
+                        <h2 class="h1 mb-3 mb-sm-4">Дизайн для маркетплейсов</h2>
+                          <a href="#" class="d-table badge bg-faded-primary text-primary fs-sm mb-3"> Wildberres</a>
+                        <p class="mb-3 mb-sm-4">Практически каждый человек хоть раз в жизни пользовался услугами онлайн-магазинов. А это значит, что спрос порождает предложение, и все предприниматели пытаются перетянуть внимание на свой продукт. С этим им может помочь привлекательная карточка товара. Дизайн карточек должен продемонстрировать все преимущества товара, используя при этом минимальное количество текста. Его главная задача — создавать привлекательные картинки, которыми заинтересуется потенциальный покупатель. </p>
+                        <ul class="list-unstyled mb-0">
+                          <li class="d-flex mb-2">
+                            <i class="bx bx-check text-primary lead me-2"></i>
+                            Инфографика для Stories
+                          </li>
+                          <li class="d-flex mb-2">
+                            <i class="bx bx-check text-primary lead me-2"></i>
+                            Инфографика в Контакте
+                          </li>
+                        </ul>
+                        <a href="#" class="btn btn btn-primary shadow-primary my-4">Подробнее</a>
+                      </div>
+                    </div>
+                  </div>
+                <!-- Row 5 -->
+                <div class="row align-items-lg-center pb-5 mb-2 mb-lg-4 mb-xl-5">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                      {% image page.image_service_5 width-600 as image_service_5 %}
+                      <img src="{{ image_service_5.url }}" class="rounded-3" alt="Image">
+                    </div>
+                    <div class="col-md-6">
+                      <div class="ps-xl-5 ms-md-2 ms-lg-4">
+                        <h2 class="h1 mb-3 mb-sm-4">Интеллект-карты</h2>
+                        <a href="#" class="d-table badge bg-faded-primary text-primary fs-sm mb-3">Mind map</a>
+                        <p class="mb-4 mb-lg-5">Интеллект-карты позволяют хранить и структурировать огромное количество информации. Они отображают иерархию, показывают взаимосвязь между идеями и позволяют увидеть общую картину. Это также делает интеллект-карты идеальным инструментом для показа презентаций, групповой работы и планирования проектов.</p>
+                        <a href="#" class="btn btn btn-primary shadow-primary">Подробнее</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Row 6 -->
+                  <div class="row align-items-lg-center pt-md-3 pb-3 mb-2 mb-lg-4 mb-xl-5">
+                    <div class="col-md-6 order-md-2 mb-4 mb-md-0">
+                      {% image page.image_service_6 width-600 as image_service_6 %}
+                      <img src="{{ image_service_6.url }}" class="rounded-3" alt="Image">
+                    </div>
+                    <div class="col-md-6 order-md-1">
+                      <div class="pe-xl-5 me-md-2 me-lg-4">
+                        <h2 class="h1 mb-3 mb-sm-4">Редактирование видео</h2>
+                          <a href="#" class="d-table badge bg-faded-primary text-primary fs-sm mb-3">Davinci Resolve</a>
+                        <p class="mb-3 mb-sm-4">Видеоролики - отличный ресурс для рекламы, обучения и информирования. Мы дополним Ваше видео сопровождающей инфографикой, субтитрами, поясняющими материалами. </p>
+                        <a href="#" class="btn btn btn-primary shadow-primary my-4">Подробнее</a>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+      <!-- До и после редакция фото -->
+      <section id="landings" class="container text-center pt-2  mt-md-4 mt-lg-5">
+        <h2 class="h1 pt-2 pt-lg-0">Примеры презентаций</h2>
+        <p class="fs-lg pb-2 pb-md-3 pb-lg-0 mb-4 mb-lg-5">Презентация помогает наглядно и доступно донести свои мысли до собеседника. Хорошая презентация не просто объясняет, она призвана убедить его в исключительной необходимости вашего предложения.</p>
+        <div class="row row-cols-1 row-cols-sm-1 row-cols-lg-2">
+          <div class="col card-hover shadow-none bg-none position-relative mb-4 mb-lg-5">
+            <h3 class="h4 mb-2"></h3>
+            <div class="gallery">
+                {% image page.image_before_1 width-1200 as image_before_1 %}
+                <a href="{{ image_before_1.url }}" class="gallery-item rounded-3">
+                <img src="{{ image_before_1.url }}" alt="Исходные данные">
+                </a>
+            </div>
+
+        </div>
+          <div class="col card-hover shadow-none bg-none position-relative mb-4 mb-lg-5">
+            <h3 class="h4 mb-2"></h3>
+            <div class="gallery">
+                {% image page.image_after_1 width-1200 as image_after_1 %}
+                <a href="{{ image_after_1.url }}" class="gallery-item rounded-3">
+                <img src="{{ image_after_1.url }}" alt="Новый вариант">
+                </a>
+            </div>
+
+        </div>
+        </div>
+      </section>
+      <!-- До и после редакция фото 2 -->
+      <section id="landings" class="container text-center mt-md-4 mt-lg-5">
+        <div class="row row-cols-1 row-cols-sm-1 row-cols-lg-2">
+          <div class="col card-hover shadow-none bg-none position-relative mb-4 mb-lg-5">
+            <h3 class="h4 mb-2">До</h3>
+            <div class="gallery">
+                {% image page.image_before_2 width-1200 as image_before_2 %}
+                <a href="{{ image_before_2.url }}" class="gallery-item rounded-3">
+                <img src="{{ image_before_2.url }}" alt="Исходные данные">
+                </a>
+            </div>
+
+        </div>
+          <div class="col card-hover shadow-none bg-none position-relative mb-4 mb-lg-5">
+            <h3 class="h4 mb-2">После</h3>
+            <div class="gallery">
+                {% image page.image_after_2 width-1200 as image_after_2 %}
+                <a href="{{ image_after_2.url }}" class="gallery-item rounded-3">
+                <img src="{{ image_after_2.url }}" alt="Новый вариант">
+                </a>
+            </div>
+
+        </div>
+        </div>
+      </section>
+      <!-- До и после редакция фото 3 -->
+      <!--<section id="landings" class="container text-center  mt-md-4 mt-lg-5">
+        <div class="row row-cols-1 row-cols-sm-1 row-cols-lg-2">
+          <div class="col card-hover shadow-none bg-none position-relative mb-4 mb-lg-5">
+            <h3 class="h4 mb-2">До</h3>
+            <div class="gallery">
+                {% image page.image_before_3 width-1200 as image_before_3 %}
+                <a href="{{ image_before_3.url }}" class="gallery-item rounded-3">
+                <img src="{{ image_before_3.url }}" alt="Исходные данные">
+                </a>
+            </div>
+            <h3 class="h6 mt-4 mb-3 mb-lg-0">Исходные данные</h3>
+        </div>
+          <div class="col card-hover shadow-none bg-none position-relative mb-4 mb-lg-5">
+            <h3 class="h4 mb-2">После</h3>
+            <div class="gallery">
+                {% image page.image_after_3 width-1200 as image_after_3 %}
+                <a href="{{ image_after_3.url }}" class="gallery-item rounded-3">
+                <img src="{{ image_after_3.url }}" alt="Новый вариант">
+                </a>
+            </div>
+            <h3 class="h6 mt-4 mb-3 mb-lg-0">Исходные данные</h3>
+        </div>
+        </div>
+      </section>-->
+
+      {% include "blog/components/related_posts.html" %}
+
+      {% include "includes/footer.html" %}
+{% endblock content %}

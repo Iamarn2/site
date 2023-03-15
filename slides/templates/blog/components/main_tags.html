@@ -1,0 +1,10 @@
+{% load wagtailroutablepage_tags %}
+{% load i18n %}
+                <div class="card card-body mb-4">
+                    <h3 class="h5">Тэги</h3>
+                    <div class="d-flex flex-wrap">
+                     {% for tag in tags %}
+                      <a href="{% routablepageurl blogpage 'post_by_tag' tag.slug %}" class="btn btn-outline-secondary btn-sm px-3 my-1 me-2">#{{ tag.name }}</a>
+                      {% endfor %}
+                    </div>
+                  </div>

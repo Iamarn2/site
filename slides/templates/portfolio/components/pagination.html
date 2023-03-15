@@ -1,0 +1,42 @@
+
+<!-- Pagination -->
+    <div class="masonry-grid-item col pb-2 pb-lg-3">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center pt-lg-3 pt-1">
+                {% if works.has_previous %}
+                <li class="page-item active ">
+                    <a href="?page={{ works.previous_page_number }}" class="page-link">
+                    <i class="bx bx-chevron-left ms-n1 me-1"></i>
+                    Предыдущая
+                    </a>
+                </li>
+                {% else %}
+                <li class="page-item">
+                    <a href="#" class="page-link">
+                    <i class="bx bx-chevron-left ms-n1 me-1"></i>
+                    Предыдущая
+                    </a>
+                </li>
+                {% endif %}
+                <li class="page-item">
+                    <span class="page-link text-body">{{ works.number }} / {{ works.paginator.num_pages }}</span>
+                </li>
+                {% if works.has_next %}
+                <li class="page-item active">
+                    <a href="?page={{ works.next_page_number }}" class="page-link">
+                    Следующая
+                    <i class="bx bx-chevron-right me-n1 ms-1"></i>
+                    </a>
+                </li>
+                {% else %}
+                <li class="page-item">
+                    <a href="#" class="page-link">
+                    Следующая
+                    <i class="bx bx-chevron-right me-n1 ms-1"></i>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+          </nav>
+       </div>
+

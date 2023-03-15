@@ -1,0 +1,37 @@
+# Mac configuration files
+.DS_Store
+*.pyc
+*.log
+*.swp
+*.retry
+.env
+.idea
+.vscode
+*~
+/logs
+/data
+.~*
+common/CACHE
+# Djanog secret settings
+slides/settings/local.py
+
+slidesdb
+node_modules
+venv
+.venv
+# Python cache file
+__pycache__
+.vagrant/
+/.vagrant/
+/Vagrantfile.local
+!.gitignore
+
+# Translations
+*.mo
+
+# Unit test / coverage reports
+.coverage
+htmlcov/
+
+# Media files
+media/**

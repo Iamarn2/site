@@ -1,0 +1,24 @@
+
+{% load custom_comments_tags %}
+
+{% for comment in comment_list %}
+
+<!-- Comment -->
+            <div id="c{{ comment.id }}" class="py-4">
+                <div class="d-flex align-items-center justify-content-between pb-2 mb-1">
+                  <div class="d-flex align-items-center me-3">
+                    <div class="ps-3">
+                      <h6 class="fw-semibold mb-0">{{ comment.name }}</h6>
+                      <span class="fs-sm text-muted">{{ comment.submit_date }}</span>
+                    </div>
+                  </div>
+                  <a href="#" class="nav-link fs-sm px-0">
+                    <i class="bx bx-share fs-lg me-2"></i>
+                    Reply
+                  </a>
+                </div>
+                <p class="mb-0">{{ comment.comment|comment_post_processor|linebreaks }}</p>
+              </div>
+  
+              <hr class="my-2">
+{% endfor %}

@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% load static wagtailimages_tags wagtailcore_tags %}
+
+{% block content %}
+
+
+    <h2 class="h1 pt-3 text-center pb-md-4"></h2>
+      <!-- Pricing -->
+      <section class="container py-5 my-md-2 my-lg-4 my-xl-5">
+        <h2 class="h1 text-center pb-3 pb-md-4">Стоимость презентации</h2>
+        <div class="price-switch-wrapper mb-n2">
+          <p class="fs-lg text-muted text-center pb-4 mb-2 mb-lg-3">на примере презентации в 10 слайдов</p>
+          <div class="table-responsive-xxl pt-md-3">
+            <div class="row flex-nowrap pb-4">
+              <div class="col">
+                <div class="card h-100 border-0 shadow-sm p-xxl-3" style="min-width: 18rem;">
+                  <div class="card-body">
+                    <h3 class="mb-4 text-center">Стартовый</h3>
+                    <ul class="list-unstyled fs-sm pb-md-3 mb-3 pt-4">
+                      <li class="d-flex mb-2">
+                        <i class="bx bx-check fs-xl text-primary me-1"></i>
+                        У вас есть готовый текст или старая презентация, которую нужно грамотно оформить.
+                      </li>
+                      <li class="d-flex mb-2">
+                        <i class="bx bx-check fs-xl text-primary me-1"></i>
+                        Мы разработаем 1 вариант дизайна.
+                      </li>
+                      <li class="d-flex text-muted mb-2">
+                        <i class="bx bx-check fs-xl text-primary me-1"></i>
+                        Сверстаем 10 слайдов презентации с элементами инфографики.
+                      </li>
+                      <li class="d-flex text-muted mb-2">
+                        <i class="bx bx-check fs-xl text-primary me-1"></i>
+                        2 итерации правок.
+                      </li>
+                      <li class="d-flex text-muted">
+                        <i class="bx bx-check fs-xl text-primary me-1"></i>
+                        Результат отдадим в формате PDF для рассылки и печати в типографии.
+                      </li>
+                      <h1 class="pt-5 h1"></h1>
+                      <h1 class="pt-1 h1"></h1>
+                    </ul>
+                    <h3 class="mb-2 text-center">15 000 руб.</h3>
+                    <h3 class=" pb-2 fs-lg fw-normal text-body mb-2 text-center">до 5 рабочих дней</h3>
+                  </div>
+                  <div class="card-footer border-0 pt-0 pb-4">
+                    <a href="#" class="btn btn-outline-primary w-100">Связаться с нами</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0 bg-primary shadow-primary shadow-dark-mode-none p-xxl-3" style="min-width: 18rem;">
+                  <div class="card-body">
+                    <h3 class="h3  mb-2 text-center">Оптимальный</h3>
+                    <ul class="list-unstyled fs-sm pb-md-3 mb-3 pt-4">
+                      <li class="d-flex text-light mb-2">
+                        <i class="bx bx-check fs-xl me-1"></i>
+                        <span>У вас есть готовый текст или старая презентация, которую нужно грамотно оформить.</span>
+                      </li>
+                      <li class="d-flex text-light mb-2">
+                        <i class="bx bx-check fs-xl me-1"></i>
+                        <span>Мы разработаем 2 дизайн-концепции. Доработаем выбранный вариант и на его основе сверстаем презентацию до 15 слайдов.</span>
+                      </li>
+                      <li class="d-flex text-light mb-2">
+                        <i class="bx bx-check fs-xl me-1"></i>
+                        <span>Правки без ограничений.</span>
+                      </li>
+                      <li class="d-flex text-light mb-2">
+                        <i class="bx bx-check fs-xl me-1"></i>
+                        <span>Результат отдадим в формате PDF для рассылки и печати в типографии, а
+                            также в PowerPoint для самостоятельного редактирования.</span>
+                      </li>
+                    </ul>
+                    <h3 class="mb-2 text-center">25 000 руб.</h3>
+                    <h3 class="fs-lg fw-normal text-body mb-2 text-center">до 10 рабочих дней</h3>
+                  </div>
+                  <div class="card-footer border-0 pt-0 pb-4">
+                    <a href="#" class="btn btn-light w-100">Связаться с нами</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0 shadow-sm p-xxl-3" style="min-width: 18rem;">
+                  <div class="card-body">
+                    <h3 class="mb-2 text-center ">Максимальный</h3>
+                    <ul class="list-unstyled fs-sm pb-md-3 mb-3 pt-4">
+                      <li class="d-flex mb-2">
+                        <i class="bx bx-check fs-xl text-primary me-1"></i>
+                        Если у вас нет понимания о чём и что писать.
+                      </li>
+                      <li class="d-flex mb-2">
+                        <i class="bx bx-check fs-xl text-primary me-1"></i>
+                        NМы погрузимся в тему. Определим ключевые смыслы и ценности. Подготовим структуру и напишем тексты.
+                      </li>
+                      <li class="d-flex mb-2">
+                        <i class="bx bx-check fs-xl text-primary me-1"></i>
+                        Разработаем 3 дизайн-концепции. Доработаем выбранный вариант и на его основе сверстаем презентацию с элементами инфографики.
+                      </li>
+                      <li class="d-flex mb-2">
+                        <i class="bx bx-check fs-xl text-primary me-1"></i>
+                        Правки без ограничений.
+                      </li>
+                      <li class="d-flex">
+                        <i class="bx bx-check fs-xl text-primary me-1"></i>
+                        Результат отдадим в формате PDF для рассылки и печати в типографии, a также в PowerPoint для самостоятельного редактирования.
+                      </li>
+                    </ul>
+                    
+                    <h3 class="mb-2 text-center">45 000 руб.</h3>
+                    <h3 class="fs-lg fw-normal text-body mb-2 text-center">до 20 рабочих дней</h3>
+                  </div>
+                  <div class="card-footer border-0 pt-0 pb-4">
+                    <a href="#" class="btn btn-outline-primary w-100">Связаться с нами</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+{% include "includes/footer.html" %}
+{% endblock content %}

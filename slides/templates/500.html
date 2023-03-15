@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}404-Page not found{% endblock %}
+{% block content %}
+
+<main class="page-wrapper pt-5">
+    <div class="container form-page-thanks">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="index-header__title">{{ page.title }}</h1>
+            </div>
+            <div class="col-md-7 index-header__body-introduction">
+                Страница не найдена
+            </div>
+        </div>
+    </div>
+</main>
+    {% include "includes/footer.html" %}
+{% endblock content %}

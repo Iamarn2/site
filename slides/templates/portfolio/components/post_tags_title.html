@@ -1,0 +1,6 @@
+{% load wagtailroutablepage_tags %}
+            <div class="d-flex flex-sm-row flex-column">
+                {% for tag in page.tags.all %}
+                <a class="page-link me-3" href="{% routablepageurl portfoliopage 'work_by_tag' tag.slug %}">{{ tag.name }}</a>
+                {% endfor %}
+            </div>

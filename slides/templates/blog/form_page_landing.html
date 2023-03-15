@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+<main class="page-wrapper pt-5">
+    <div class="container form-page-thanks">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="index-header__title">{{ page.title }}</h1>
+            </div>
+            <div class="col-md-7 index-header__body-introduction">
+                {{ page.thank_you_text|richtext }}
+            </div>
+        </div>
+    </div>
+</main>
+    {% include "includes/footer.html" %}
+{% endblock content %}

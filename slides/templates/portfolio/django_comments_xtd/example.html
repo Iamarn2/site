@@ -1,0 +1,92 @@
+<section class="container mb-4 pt-lg-4 pb-lg-3">
+    <h2 class="h1 text-center text-sm-start">4 comments</h2>
+    <div class="row">
+        {% for item in comments %}
+
+            <!-- Comments -->
+            <div class="col-lg-9">
+
+                <!-- Comment -->
+                <div class="py-4">
+                <div class="d-flex align-items-center justify-content-between pb-2 mb-1">
+                    <div class="d-flex align-items-center me-3">
+
+                    {% if item.comment.user.photo %}
+                        <img alt="Avatar" src="{{ item.comment.user.photo.url }}" class="rounded-circle" width="48">
+                    {% else %}
+                        {{ item.comment.user_email|xtd_comment_gravatar }}
+                    {% endif %}
+
+
+
+
+                    <div class="ps-3">
+
+                        <h6 class="fw-semibold mb-0">{{ item.comment.user.display_name }}</h6>
+                        <a name="c{{ item.comment.id }}"></a>
+
+                        <span class="fs-sm text-muted">{{ item.comment.submit_date|localize }}</span>
+                        <div class="mr-auto">
+                            {% if item.comment.url and not item.comment.is_removed %}
+                                <a href="{{ item.comment.url }}" target="_new">
+                            {% endif %}
+                            {{ item.comment.user.display_name }}
+                            {% if item.comment.url %}
+                                </a>
+                            {% endif %}
+                            {% if item.comment.user and item.comment.user|has_permission:"django_comments.can_moderate" %}&nbsp;<span class="badge badge-secondary">{% trans "moderator" %}</span>
+                            {% endif %}
+                                <a class="permalink" title="{% trans 'comment permalink' %}" href="{% get_comment_permalink item.comment %}">¶</a>
+                        
+                        </div>
+
+                    </div>
+                    </div>
+                    <a href="#" class="nav-link fs-sm px-0">
+                    <i class="bx bx-share fs-lg me-2"></i>
+                    Reply
+                    </a>
+                </div>
+                <p class="mb-0 pb-2">Eget amet, ac scelerisque tellus sed. Sapien duis sit neque pulvinar. Est sit aenean nisl etiam donec mattis ut diam. Luctus massa eu nunc aliquam viverra tempus, eu amet, luctus. Ac faucibus vestibulum eu lacus. Ullamcorper sem ultrices tincidunt pharetra?</p>
+
+
+                <!-- Comment reply -->
+                <div class="position-relative ps-4 mt-4">
+                    <span class="position-absolute top-0 start-0 w-1 h-100 bg-primary"></span>
+                    <div class="d-flex align-items-center justify-content-between ps-3 pb-2 mb-1">
+                    <div class="d-flex align-items-center me-3">
+                        <img src="assets/img/avatar/05.jpg" class="rounded-circle" width="48" alt="Avatar">
+                        <div class="ps-3">
+                        <h6 class="fw-semibold mb-0">Albert Flores</h6>
+                        <span class="fs-sm text-muted">16 hours ago</span>
+                        </div>
+                    </div>
+                    {% if allow_feedback %}
+                        {% include "includes/django_comments_xtd/user_feedback.html" %}
+                    {% endif %}
+
+
+                    {% if item.comment.allow_thread and not item.comment.is_removed %}
+                        {% if allow_feedback %}&nbsp;&nbsp;<span class="text-muted">&bull;</span>&nbsp;&nbsp;{% endif %}
+                        <a class="nav-link fs-sm px-0" href="{{ item.comment.get_reply_url }}"><i class="bx bx-share fs-lg me-2"></i>{% trans "Ответить" %}</a>
+                        {% endif %}
+                    {% endif %}
+
+
+                    <a href="#" class="nav-link fs-sm px-0">
+                        <i class="bx bx-share fs-lg me-2"></i>
+                        Reply
+                    </a>
+                    </div>
+                    <p class="ps-3 mb-0"><a href="#" class="fw-semibold text-decoration-none">@Ralph Edwards</a> Vulputate malesuada amet, consequat ullamcorper. Orci, cras maecenas in sit purus pellentesque. Ridiculus blandit pellentesque eget arcu morbi nisl. Morbi volutpat adipiscing sapien sed ut tempor.</p>
+                </div>
+                </div>
+
+                <hr class="my-2">
+                {% if not item.comment.is_removed and item.children %}
+                {% render_xtdcomment_tree with comments=item.children %}
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+  </section>

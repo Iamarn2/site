@@ -1,0 +1,23 @@
+{% load static wagtailimages_tags wagtailsimplegallery_tags %}
+
+<div class="row pb-lg-3">
+    {% for img in gallery_images %}
+    {% image img original as img_thumb %}
+    <!-- Item -->
+    <div class="col-md-6 mb-2">
+        <div class="card card-portfolio">
+        <div class="card-img">
+            <img src="{{ img_thumb.url }}" alt="{{ img_thumb.alt }}">
+        </div>
+        <div class="card-body">
+            <h2 class="h4 mb-2">
+            <a href="{{ img|original_url }}" class="stretched-link">{{ img_thumb.alt|hide_num_order }} &amp; Flashing Neon Lights</a>
+            </h2>
+            <div class="card-portfolio-meta">
+            <span class="text-muted">3D Render / Graphic Design / Motion Design</span>
+            </div>
+        </div>
+        </div>
+    </div>
+    {% endfor %}  
+</div>

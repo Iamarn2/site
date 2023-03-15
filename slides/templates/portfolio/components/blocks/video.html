@@ -1,0 +1,5 @@
+{% load wagtailimages_tags  %}
+                <a href="{{ block.value.video_url }}" class="gallery-item video-item is-hovered rounded-3" data-sub-html='<h6 class="fs-sm text-light">{{ block.value.video_caption }}</h6>'>
+                    {% image block.value.video_image_preview original as video_image_preview %}
+                    <img src="{{ video_image_preview.url }}" alt="{{ block.value.video_image_caption }}">
+                </a>

@@ -1,0 +1,20 @@
+{% load static navigation_tags wagtailcore_tags %}
+
+
+                                            {% for child in menuitems_children %}
+                                            <li><a href="{% pageurl child %}" class="dropdown-item">{{ child.title }}</a></li>
+                                            {% endfor %}
+
+<!--                <div class="dropdown-menu p-0">
+                    <div class="d-lg-flex">
+                        <div class="mega-dropdown-column bg-position-center bg-repeat-0 bg-size-cover rounded-3 rounded-end-0" style="background-image: url({% static 'img/landings.jpg' %}); margin: -1px;"></div>
+                        <div class="mega-dropdown-column pt-lg-3 pb-lg-4">
+                            <ul class="list-unstyled mb-0">
+                                {% for child in menuitems_children %}
+                                <li><a href="{% pageurl child %}" class="dropdown-item">{{ child.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+-->

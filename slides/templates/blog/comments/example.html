@@ -1,0 +1,50 @@
+{% load i18n comments %}
+
+<div class="col-lg-9">
+    <div class="card p-md-5 p-4 border-0 bg-secondary">
+      <div class="card-body w-100 mx-auto px-0" style="max-width: 746px;">
+        <h2 class="mb-4 pb-3">{% trans 'Оставьте комментарий' %}</h2>
+
+        <form method="POST" action="{% comment_form_target %}" class="row gy-4 needs-validation" novalidate>
+            {% csrf_token %}
+            <fieldset>
+                <input type="hidden" name="next" value="{% url 'comments-xtd-sent' %}"/>
+
+                <div class="alert alert-danger" data-comment-element="errors" hidden>
+                </div>
+                {% for field in form %}
+                    {% if field.is_hidden %}<div>{{ field }}</div>{% endif %}
+                {% endfor %}
+                <div style="display:none">{{ form.honeypot }}</div>
+
+                {% if not request.user.is_authenticated %}
+                    <div class="col-sm-6 col-12">
+                        {% with field=form.name %}{% include "account/form_field.html" %}{% endwith %}
+                    </div>
+                {% endif %}
+                {% if not request.user.is_authenticated or not request.user.email %}
+                    <div class="col-sm-6 col-12">
+                        {% with field=form.email %}{% include "account/form_field.html" %}{% endwith %}
+                    </div>
+                {% endif %}
+                <div class="col-12">
+                    <div class="form-check">
+                            {{ form.followup }}
+                            <label for="id_followup{% if cid %}_{{ cid }}{% endif %}" class="form-check-label">&nbsp;{{ form.followup.label }}</label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    {% with field=form.comment %}{% include "account/form_field.html" %}{% endwith %}
+                </div>
+            </fieldset>
+            <div class="col-12">
+              <input type="submit" name="post" value="{% trans 'Отправить' %}" class="btn btn-lg btn-primary w-sm-auto w-100 mt-2" />
+              <input type="submit" name="preview" value="{% trans 'Предпросмотр' %}" class="btn btn-lg btn-primary w-sm-auto w-100 mt-2" />
+            </div>
+        </form>
+
+
+
+      </div>
+    </div>
+  </div>

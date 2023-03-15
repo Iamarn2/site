@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags wagtailsimplegallery_tags %}
+
+{% block title %}{{ page.seo_title }}{% endblock %}
+{% block metadesc %}{{ page.search_description }}{% endblock %}
+
+
+{% block content %}
+      <!-- Breadcrumb -->
+      <nav class="container py-4 mb-lg-2 mt-lg-3" aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item">
+            <a href="index.html"><i class="bx bx-home-alt fs-lg me-1"></i>Главная</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+        </ol>
+      </nav>
+
+            <!-- Page title + Filters -->
+
+      <section class="container d-md-flex align-items-center justify-content-between pb-3">
+        {% if current_tag %}
+            <h1 class="text-nowrap mb-md-4 pe-md-5">{{ current_tag.name }}</h1>
+        {% else %}
+            <h1 class="text-nowrap mb-md-4 pe-md-5">Портфолио</h1>
+        {% endif %}
+        <nav class="overflow-auto">
+            
+          <ul class="nav nav-tabs-alt flex-nowrap border-0">
+              <li class="nav-item">
+                <a href="http://127.0.0.1:8000/galereya/tags/все/" class="nav-link text-nowrap">Все</a>
+              </li>
+            <li class="nav-item">
+                <a href="http://127.0.0.1:8000/galereya/tags/Инфографика/" class="nav-link text-nowrap">Инфографика</a>
+            </li>
+            <li class="nav-item">
+              <a href="http://127.0.0.1:8000/galereya/tags/Презентации/" class="nav-link text-nowrap">Презентации</a>
+            </li>
+            <li class="nav-item">
+              <a href="http://127.0.0.1:8000/galereya/tags/Отчеты/" class="nav-link text-nowrap">Отчеты</a>
+            </li>
+            <li class="nav-item">
+              <a href="http://127.0.0.1:8000/galereya/tags/Интеллект-карты/" class="nav-link text-nowrap">Интеллект-карты</a>
+            </li>
+            <li class="nav-item">
+              <a href="http://127.0.0.1:8000/galereya/tags/schema/" class="nav-link text-nowrap">Схемы</a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+
+      <!-- Portfolio grid -->
+
+      <section class="container pb-5 mb-2 mb-md-4 mb-lg-5">
+     
+        <div class="row pb-lg-3">
+            {% simple_gallery collection="Root" %}
+            {% for img in gallery_images %}
+            {% image img original as img_thumb %}
+            <!-- Item -->
+            <div class="col-md-6 mb-2">
+                <div class="card card-portfolio">
+                <div class="card-img">
+                    <img src="{{ img_thumb.url }}" alt="{{ img_thumb.alt }}">
+                </div>
+                <div class="card-body">
+                    <h2 class="h4 mb-2">
+                    <a href="{{ img|original_url }}" class="stretched-link">{{ img_thumb.alt|hide_num_order }} &amp; Flashing Neon Lights</a>
+                    </h2>
+                    <div class="card-portfolio-meta">
+                    <span class="text-muted">{{ img_thumb.tag.name }}</span>
+                    </div>
+                </div>
+                </div>
+            </div>
+            {% endfor %}  
+        </div>
+
+        <!-- Pagination -->
+        {% if gallery_images.has_next or gallery_images.has_previous %}
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                <li class="page-item">
+                    {% if gallery_images.has_previous %}
+                    <a href="?page={{ gallery_images.previous_page_number }}
+                    {% for key,value in request.GET.items %}
+                        {% if key != 'page' %}&amp;
+                          {{ key }}={{ value }}
+                        {% endif %}
+                    {% endfor %}" class="page-link">
+                    <i class="bx bx-chevron-left ms-n1 me-1"></i>
+                    Предыдущая
+                    </a>
+                    {% endif %}
+                </li>
+                <li class="page-item disabled d-sm-none">
+                    <span class="page-link text-body">2 / 5</span>
+                </li>
+                <li class="page-item d-none d-sm-block">
+                    <a href="#" class="page-link">1</a>
+                </li>
+                <li class="page-item active d-none d-sm-block" aria-current="page">
+                    <span class="page-link">
+                    2
+                    <span class="visually-hidden">(current)</span>
+                    </span>
+                </li>
+                <li class="page-item d-none d-sm-block">
+                    <a href="#" class="page-link">3</a>
+                </li>
+                <li class="page-item d-none d-sm-block">
+                    <a href="#" class="page-link">4</a>
+                </li>
+                <li class="page-item d-none d-sm-block">
+                    <a href="#" class="page-link">5</a>
+                </li>
+                <li class="page-item">
+                    {% if gallery_images.has_next %}
+                    <a href="?page={{ gallery_images.next_page_number }}
+                    {% for key,value in request.GET.items %}
+                        {% if key != 'page' %}&amp;
+                          {{ key }}={{ value }}
+                        {% endif %}
+                    {% endfor %}" class="page-link">
+                    Следующая
+                    <i class="bx bx-chevron-right me-n1 ms-1"></i>
+                    </a>
+                    {% endif %}
+                </li>
+                </ul>
+            </nav>
+        {% endif %}
+      </section>
+      <!-- Contact CTA -->
+      <section class="container mb-1 mb-md-3 mb-lg-4">
+        <div class="bg-secondary rounded-3 overflow-hidden">
+          <div class="row align-items-center">
+            <div class="col-xl-4 col-md-5 offset-lg-1">
+              <div class="pt-5 pb-3 pb-md-5 px-4 px-lg-0 text-center text-md-start">
+                <p class="lead mb-3">{{ page.title_call }}</p>
+                <h2 class="h1 pb-3 pb-sm-4">{{ page.introduction_1 }} <span class="text-primary">{{ page.introduction_2 }} </span>{{ page.introduction_3 }}</h2>
+                <a href="{% pageurl page.cta_link %}" class="btn btn-primary btn-lg">{{ page.text_cta }}</a>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-7 offset-xl-1">
+              <div class="position-relative d-flex flex-column align-items-center justify-content-center h-100">
+                <svg class="d-none d-md-block position-absolute top-50 start-0 translate-middle-y" width="868" height="868" style="min-width: 868px;" viewBox="0 0 868 868" fill="none" xmlns="http://www.w3.org/2000/svg"><circle opacity="0.15" cx="434" cy="434" r="434" fill="#6366F1"/></svg>
+                {% image page.image width-382 as image %}
+                <img src="{{ image.url }}" class="position-relative zindex-3 mb-2 my-lg-4" width="382" alt="Illustration">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+{% endblock content %}
+
+
+{% block extra_js %}{% endblock %}

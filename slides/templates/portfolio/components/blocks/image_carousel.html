@@ -1,0 +1,36 @@
+{% load static  wagtailcore_tags wagtailimages_tags %}
+            <section>
+                <h1>   </h1>
+                <!-- Fade transition -->
+                <section class="swiper swiper-nav-onhover rounded-3" data-swiper-options='{
+                    "effect": "fade",
+                    "loop": true,
+                    "navigation": {
+                    "prevEl": ".btn-prev",
+                    "nextEl": ".btn-next"
+                    },
+                    "autoplay": 
+                    {"delay": 2000}}'>
+                    <div class="swiper-wrapper ">
+                    {% for item in block.value %}
+                        <!-- Slide -->
+                        <div class="swiper-slide bg-light rounded-3 ">
+                            <div class="ratio ratio-16x9 ">
+                                {% image item original as img %}
+                                <img src="{{ img.url }}" class="d-block mb-3 rounded-3"  alt="{{ img.alt }}">
+                            </div>
+                        </div>
+                        <!-- Pagination -->
+                        <div class="swiper-pagination  d-flex justify-content-center position-absolute">
+                            <h4>{{ img.alt }}</h4>
+                        </div>
+                    {% endfor %}
+                    </div>
+                    <!-- Prev / next buttons -->
+                    <button type="button" class="btn btn-prev btn-icon btn-xl me-2">
+                        <i class="bx bx-chevron-left"></i>
+                    </button>
+                    <button type="button" class="btn btn-next btn-icon btn-xl ms-2">
+                        <i class="bx bx-chevron-right"></i>
+                    </button>
+            </section>

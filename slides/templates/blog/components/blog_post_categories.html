@@ -1,0 +1,11 @@
+{% load wagtailroutablepage_tags %}
+
+{% for category in post.post_categories %}
+
+<a href="#" class="badge fs-sm text-white bg-info shadow-info text-decoration-none mb-3">
+    {{ category.blog_category.name }}
+</a>
+
+{% endfor %}
+
+

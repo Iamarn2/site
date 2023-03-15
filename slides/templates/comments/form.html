@@ -1,0 +1,21 @@
+{% load comments crispy_forms_tags comments %}
+
+<form 
+    action="{% comment_form_target %}?next={{ form.target_object.url }}"
+    method="post"
+    data-object-pk="{{ form.get_object_pk }}"
+    data-content-type="{{ form.get_content_type }}"
+    data-mention-url="{% url 'comments-mention-query' %}"
+    class="row gy-4 needs-validation" novalidate
+    data-controller="comment">
+
+    <div class="col-12">
+        {% csrf_token %}
+        {{ form|crispy }}
+    </div>
+    <input type="hidden" name="next" value="{{ form.target_object.url }}" />
+    <div class="col-12">
+        <!--<input type="submit" name="POST" class="btn btn-lg btn-primary w-sm-auto w-100 mt-2" value="POST" />-->
+        <button type="submit" class="btn btn-lg btn-primary w-sm-auto w-100 mt-2">Отправить</button>
+    </div>
+</form>

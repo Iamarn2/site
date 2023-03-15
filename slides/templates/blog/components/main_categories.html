@@ -1,0 +1,18 @@
+{% load wagtailroutablepage_tags %}
+{% load i18n %}
+                <div class="card card-body mb-4">
+                    <h3 class="h5">Категории</h3>
+                    <ul class="nav flex-column fs-sm">
+                      <li class="nav-item mb-1">
+                      <a href="/blog/" class="nav-link py-1 px-0 ">Все посты</a>
+                      </li>
+                      <li class="nav-item mb-1">
+                        {% for category in categories %}
+                             <a href="{% routablepageurl blogpage 'post_by_category' category.slug %}" class="nav-link py-1 px-0 {% if category.active %}active{% endif %}">{{ category.name }}</a>
+                        {% endfor %}
+                    </li>
+
+                    </ul>
+                  </div>
+
+

@@ -1,0 +1,14 @@
+{% with blocks=page.variants %}
+
+{% for block in blocks %}
+
+
+    {% if block.block_type == "answer" %}
+    {% include "base/components/blocks/answer.html" with block=block only %}
+    {% endif %}
+
+{% endfor %}
+
+{% endwith %}
+
+

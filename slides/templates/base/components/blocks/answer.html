@@ -1,0 +1,20 @@
+{% load wagtailimages_tags %}
+<!-- Item -->
+
+              <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                <h3 class="accordion-header" id="heading-{{ block.value.heading_answer }}">
+                  <button class="accordion-button fs-xl shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{ block.value.collapse_answer }}" aria-expanded="true" aria-controls="collapse-{{ block.value.collapse_answer }}">{{ block.value.answer_text }}</button>
+                </h3>
+                <div class="accordion-collapse collapse " id="collapse-{{ block.value.collapse_answer }}" aria-labelledby="heading-{{ block.value.heading_answer }}" data-bs-parent="#accordion-services">
+                  <div class="accordion-body pt-0">
+                    <div class="d-flex flex-md-row flex-column align-items-md-center">
+                        {% image block.value.image_block original as image_block %}
+                      <img src="{{ image_block.url }}" width="200" alt="{{ block.value.image_caption }}" class="me-md-4 mb-md-0 mb-3">
+                      <div class="ps-md-3">
+                        <p class="mb-0">{{ block.value.question_text }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+

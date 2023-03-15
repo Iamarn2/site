@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% load static wagtailimages_tags wagtailcore_tags crispy_forms_tags%}
+
+{% block content %}
+
+<main class="page-wrapper">
+    <!-- Форма отправки сообщения -->
+    <section class="bg-size-cover bg-position-bottom-center bg-repeat-0 py-5" style="background-image: url({% static 'img/contacts/bg.svg' %});">
+      <div class="container pb-lg-4 pb-xl-5">
+
+       <div class="row pt-md-2 pt-lg-5 pb-2 pb-md-4">
+          <div class="col-xxl-4 col-xl-5 col-lg-6 mt-3">
+
+            <nav class="container mt-lg-4 ms-0 pt-0" aria-label="breadcrumb">
+                <ol class="breadcrumb mb-5">
+                  <li class="breadcrumb-item">
+                    <a href="/"><i class="bx bx-home-alt fs-lg me-1 ms-0"></i>Главная</a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    <a href="/kontakty/">Контакты</a>
+                </li>
+                </ol>
+              </nav>
+    
+
+      <!-- Breadcrumb -->
+          <h2 class="h1 pb-4 mb-1 mb-lg-3">{{ page.subtitle }}</h2>
+
+          <li class="d-flex mb-3">
+              <i class="bx bx-time text-primary fs-xl mt-1 me-2"></i>
+              <div>
+                <div><span class="text-dark fw-semibold me-1">Пн – Пт:</span>9:00 – 18:00 </div>
+              </div>
+            </li>
+              <ul class="list-unstyled pb-3 mb-0 mb-lg-3">
+                  <li class="d-flex mb-3">
+                      <i class="bx bx-envelope text-primary fs-xl mt-1 me-2"></i>
+                      pochtaarn@gmail.com
+                    </li>
+                <li class="d-flex mb-3">
+                  <i class="bx bx-phone-call text-primary fs-xl mt-1 me-2"></i>
+                  (920) 034-78-61
+                </li>
+
+              </ul>
+           </div>
+
+          <div class="col-lg-6 offset-xl-1 offset-xxl-2 pt-3 pt-md-4 pt-lg-3 mt-3">
+              <form action="{% pageurl page %}" method="POST" novalidate>
+              <div class="row g-4">
+                      {% csrf_token %}
+                      {{ form|crispy }}
+                      <div class="col-12">
+                          <button type="submit" class="btn btn-lg btn-primary w-100 w-sm-auto">Связаться с нами</button>
+                      </div>                
+                  </div>
+              </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+      <!-- About -->
+      <section class="container pt-5 mt-2 mt-md-4 mt-lg-5">
+        <div class="row pt-xl-3">
+          <div class="col-md-5 text-center text-md-start pb-5">
+            <h1 class="mb-4">Условия работы</h1>
+            <p class="fs-lg pb-lg-3 mb-4">Мы за вежливость.</p>
+            <a href="about-v2.html" class="btn btn-primary shadow-primary btn-lg">Узнать больше</a>
+            <div class="mt-3 mt-sm-0 pt-4 pt-sm-5 mt-xl-4">
+              <h2 class="h6 mb-4">Some of our awards:</h2>
+              
+            </div>
+          </div>
+          <div class="col-xl-6 col-md-7 offset-xl-1 pb-4 pb-sm-3 pb-lg-0 mb-4 mb-sm-5 mb-lg-0">
+            <img src="{% static 'img/landing/software-company/about-img.jpg' %}" class="rounded-3 shadow-sm" alt="Image">
+          </div>
+        </div>
+      </section>
+
+{% include "includes/footer.html" %}
+{% endblock content %}
+
+
+
+<!--<form action="/kontakty/" method="POST" novalidate>
+    <div class="row g-4">
+        <input type="hidden" name="csrfmiddlewaretoken" value="wI3EwhzLYSmhq1Mp2LZZxyJNYDeM8OLyxcvYNOkIhZg3kPZtE5W4D8a2S0xy8aQw">
+
+        <div id="div_id_name" class="form-group">
+           <label for="id_name" class=" requiredField">Ваше имя<span class="asteriskField">*</span> </label>
+           <div><input type="text" name="name" maxlength="255" class="textinput textInput form-control" required id="id_name"> </div> 
+        </div>
+
+        <div id="div_id_email" class="form-group">
+            <label for="id_email" class=" requiredField">Email<span class="asteriskField">*</span> </label> 
+            <div> <input type="email" name="email" class="emailinput form-control" required id="id_email"> </div> 
+        </div>
+
+        <div id="div_id_message" class="form-group"> <label for="id_message" class=" requiredField">Сообщение<span class="asteriskField">*</span> </label> 
+            <div> <textarea name="message" cols="40" rows="10" class="textarea form-control" required id="id_message"></textarea> </div>
+        </div>
+
+            <div class="col-12">
+                <button type="submit" class="btn btn-lg btn-primary w-100 w-sm-auto">Связаться с нами</button>
+            </div>                
+        </div>
+    </form>-->

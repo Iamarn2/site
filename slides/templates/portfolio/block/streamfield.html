@@ -1,0 +1,40 @@
+{% with blocks=page.body %}
+{% load static wagtailcore_tags portfolioapp_tags %}
+{% for block in blocks %}
+    {% if block.block_type == "intro_text" %}
+    {% include "portfolio/components/blocks/intro_text.html" with block=block only %}
+    {% elif block.block_type == "h2" %}
+    {% include "portfolio/components/blocks/h2.html" with block=block only %}
+    {% elif block.block_type == "paragraph" %}
+    {% include "portfolio/components/blocks/paragraph.html" with block=block only %}
+    {% elif block.block_type == "h4_plus" %}
+    {% include "portfolio/components/blocks/h4_plus.html" with block=block only %}
+    {% elif block.block_type == "h4_minus" %}
+    {% include "portfolio/components/blocks/h4_minus.html" with block=block only %}
+    {% elif block.block_type == "bullet_list" %}
+            <ul class="mb-4 pb-2 ps-4">
+                {% include "portfolio/components/blocks/bullet_list.html" with block=block only %}
+            </ul>
+    {% elif block.block_type == "image" %}
+            <div class="mb-4 pb-2">
+                {% include "portfolio/components/blocks/image.html" with block=block only %}
+            </div>
+    {% elif block.block_type == "video" %}
+            <div class="gallery mb-4 pb-2" data-video="true">
+                {% include "portfolio/components/blocks/video.html" with block=block only %}
+            </div>
+    {% elif block.block_type == "video_upload" %}
+            <div class="gallery mb-4 pb-2" data-video="true">
+                {% include "portfolio/components/blocks/video_upload.html" with block=block only %}
+            </div>
+    {% elif block.block_type == "quote" %}
+    {% include "portfolio/components/blocks/quote.html" with block=block only %}
+    {% elif block.block_type == 'image_carousel' %}
+    {% include 'portfolio/components/blocks/image_carousel.html' with block=block only %}
+    {% else %}
+    <section class="block-{{block.block_type}}">
+        {{  block }}
+    </section>
+    {% endif %}
+{% endfor %}
+{% endwith %}

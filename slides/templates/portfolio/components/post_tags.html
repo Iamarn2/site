@@ -1,0 +1,10 @@
+{% load wagtailroutablepage_tags %}
+            <hr class="mb-4">
+            <div class="d-flex flex-sm-row flex-column pt-2">
+                <h6 class="mt-sm-1 mb-sm-2 mb-3 me-2 text-nowrap">Связанные теги:</h6>
+                <div>
+                    {% for tag in post_tags %}
+                    <a href="{% routablepageurl portfoliopage 'work_by_tag' tag.slug %}" class="btn btn-sm btn-outline-secondary me-2 mb-2">{{ tag.name }}</a>
+                    {% endfor %}
+                </div>
+            </div>

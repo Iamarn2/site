@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% load blogapp_tags %}
+{% load static %} 
+
+{% block content %}
+
+      <!-- Breadcrumb -->
+      <nav class="container mt-lg-4 pt-5" aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0 pt-5">
+          <li class="breadcrumb-item">
+            <a href="index.html"><i class="bx bx-home-alt fs-lg me-1"></i>Главная</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Блог</li>
+        </ol>
+      </nav>
+
+
+      <!-- Page content -->
+      <section class="container mt-4 mb-2 mb-md-4 mb-lg-5 pt-lg-2 pb-5">
+
+        <!-- Page title + Layout switcher -->
+        <div class="d-flex align-items-center justify-content-between mb-4 pb-1 pb-md-3">
+            <h1 class="mb-0">Блог со статьями по инфографике</h1>
+          </div>
+
+
+        <!-- Blog list + Sidebar -->
+        <div class="row">
+          <div class="col-xl-9 col-lg-8">
+
+            <!-- Item -->
+            {% for post in posts %}
+            <article class="card border-0 bg-transparent me-xl-5 mb-4">
+              <div class="row g-0">
+                {% if post.header_image %}
+                {% image post.header_image original as header_image %}
+                <div class="col-sm-5 position-relative bg-position-center bg-repeat-0 bg-size-cover rounded-3" style="background-image: url({{header_image.url}}); min-height: 15rem;">
+                  <a href="{% post_page_date_slug_url post blogpage %}" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+                </div>
+                {% endif %}
+                <div class="col-sm-7">
+                  <div class="card-body px-0 pt-sm-0 ps-sm-4 pb-0 pb-sm-4">
+                    <a href="blog-list-with-sidebar.html#" class="badge fs-sm text-white bg-info shadow-info text-decoration-none mb-3">Digital</a>
+                    <h3 class="h4">
+                      <a href="{% post_page_date_slug_url post blogpage %}">{{post.title}}</a>
+                    </h3>
+                    <p class="mb-4">{{post.teaser}}</p>
+                    {% include "blog/components/data_posts.html" %}
+                  </div>
+                </div>
+              </div>
+            </article>
+            <div class="pb-2 pb-lg-3"></div>
+            {% endfor %}
+
+            <!-- Load more button Навигация -->
+            <button class="btn btn-prev btn-outline-primary btn-icon btn-lg mt-4">
+              <i class="bx bx-chevron-left"></i>
+            </button>
+            <button class="btn btn-prev btn-outline-primary btn-icon  btn-lg mt-4">
+                <i class="bx bx-chevron-right"></i>
+              </button>
+
+              <nav class="pb-5" aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item">
+                    <a href="portfolio-courses.html#" class="page-link">
+                      <i class="bx bx-chevron-left ms-n1 me-1"></i>
+                      Предыдущая
+                    </a>
+                  </li>
+                  <li class="page-item">
+                    <a href="portfolio-courses.html#" class="page-link">
+                      Следующая
+                      <i class="bx bx-chevron-right me-n1 ms-1"></i>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+
+          <!-- Sidebar (Offcanvas below lg breakpoint) -->
+          <aside class="col-xl-3 col-lg-4">
+            <div class="offcanvas-lg offcanvas-end" id="blog-sidebar" tabindex="-1">
+
+              <!-- Header -->
+    <!--             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#blog-sidebar"></button>
+              </div>
+
+              <!-- Body -->
+              <div class="offcanvas-body">
+
+                <!-- Search form -->
+                {% include "blog/components/search.html" %}
+
+                <!-- Categories -->
+                {% category_list %}
+
+                <!-- Popular posts -->
+                {% include "blog/components/popular_posts.html" %}
+
+                <!-- Tags -->
+                {% tag_list %}
+
+                <!-- Follow Us -->
+                {% include "blog/components/follow_us.html" %}
+
+                <!-- Advertising -->
+                {% include "blog/components/ad_banner.html" %}
+
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+    <!-- Вставить призыв -->> 
+
+    </main>
+
+    {% include "includes/footer.html" %}
+
+    <!-- Offcanvas blog toggler -->
+    <button type="button" data-bs-toggle="offcanvas" data-bs-target="#blog-sidebar" aria-controls="blog-sidebar" class="btn btn-sm btn-primary fixed-bottom d-lg-none w-100 rounded-0">
+        <i class='bx bx-sidebar fs-xl me-2'></i>
+        Меню
+    </button>
+
+{% endblock %}

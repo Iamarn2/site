@@ -1,0 +1,11 @@
+{% load wagtailroutablepage_tags %}
+
+{% for category in work.work_categories %}
+
+<a href="#" class="badge fs-sm text-white bg-info shadow-info text-decoration-none mb-3">
+    {{ category.portfolio_category.name }}
+</a>
+
+{% endfor %}
+
+

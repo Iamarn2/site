@@ -1,0 +1,7 @@
+{% load wagtailroutablepage_tags %}
+
+<!-- Search form -->
+                <form class="search-form input-group mb-4 " method="get" action="{% routablepageurl portfoliopage 'work_search' %}">
+                    <input type="search" name="q" placeholder="Поиск по работам..." class="form-control rounded pe-5">
+                    <i class='bx bx-search position-absolute top-50 end-0 translate-middle-y me-3 fs-lg zindex-5'></i>
+                  </form>

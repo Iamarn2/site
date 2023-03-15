@@ -1,0 +1,105 @@
+{% load static wagtailimages_tags wagtailcore_tags %}
+      <!-- Related articles (Slider below lg breakpoint) -->
+      <section class="container mb-5 pt-md-4">
+        <div class="d-flex flex-sm-row flex-column align-items-center justify-content-between mb-4 pb-1 pb-md-3">
+          <h2 class="h1 mb-sm-0">Последние посты</h2>
+          <a href="/portfolio/" class="btn btn-lg btn-outline-primary ms-4">
+            Все статьи
+            <i class="bx bx-right-arrow-alt ms-1 me-n1 lh-1 lead"></i>
+          </a>
+        </div>
+
+        <div class="swiper mx-n2" data-swiper-options='{
+          "slidesPerView": 1,
+          "spaceBetween": 8,
+          "pagination": {
+            "el": ".swiper-pagination",
+            "clickable": true
+          },
+          "breakpoints": {
+            "500": {
+              "slidesPerView": 2
+            },
+            "1000": {
+              "slidesPerView": 3
+            }
+          }
+        }'>
+          <div class="swiper-wrapper">
+            <!-- Item -->
+            <div class="swiper-slide h-auto pb-3">
+              <article class="card border-0 shadow-sm h-100 mx-2">
+                <div class="position-relative">
+                  <img src="{% static 'img/blog/01.jpg' %}" class="card-img-top" alt="Image">
+                </div>
+                <div class="card-body pb-4">
+                  <div class="d-flex align-items-center justify-content-between mb-3">
+                    <a href="#" class="badge fs-sm text-nav bg-secondary text-decoration-none">Business</a>
+                    <span class="fs-sm text-muted">May 19, 2021</span>
+                  </div>
+                  <h3 class="h5 mb-0">
+                    <a href="blog-single.html">5 Bad Landing Page Examples &amp; How We Would Fix Them</a>
+                  </h3>
+                </div>
+                <div class="card-footer py-4">
+                  <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
+                    <img src="{% static 'img/avatar/01.jpg' %}" class="rounded-circle me-3" width="48" alt="Avatar">
+                    Jerome Bell
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide h-auto pb-3">
+              <article class="card border-0 shadow-sm h-100 mx-2">
+                <div class="position-relative">
+                  <img src="{% static 'img/blog/06.jpg' %}" class="card-img-top" alt="Image">
+                </div>
+                <div class="card-body pb-4">
+                  <div class="d-flex align-items-center justify-content-between mb-3">
+                    <a href="#" class="badge fs-sm text-nav bg-secondary text-decoration-none">Marketing</a>
+                    <span class="fs-sm text-muted">Apr 2, 2021</span>
+                  </div>
+                  <h3 class="h5 mb-0">
+                    <a href="blog-single.html">How Agile is Your Forecasting Process?</a>
+                  </h3>
+                </div>
+                <div class="card-footer py-4">
+                  <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
+                    <img src="{% static 'img/avatar/05.jpg' %}" class="rounded-circle me-3" width="48" alt="Avatar">
+                    Albert Flores
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide h-auto pb-3">
+              <article class="card border-0 shadow-sm h-100 mx-2">
+                <div class="position-relative">
+                  <img src="{% static 'img/blog/03.jpg' %}" class="card-img-top" alt="Image">
+                </div>
+                <div class="card-body pb-4">
+                  <div class="d-flex align-items-center justify-content-between mb-3">
+                    <a href="#" class="badge fs-sm text-nav bg-secondary text-decoration-none">Business</a>
+                    <span class="fs-sm text-muted">Sep 16, 2021</span>
+                  </div>
+                  <h3 class="h5 mb-0">
+                    <a href="blog-single.html">This Week in Search: New Limits and Exciting Features</a>
+                  </h3>
+                </div>
+                <div class="card-footer py-4">
+                  <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
+                    <img src="{% static 'img/avatar/02.jpg' %}" class="rounded-circle me-3" width="48" alt="Avatar">
+                    Ralph Edwards
+                  </a>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Pagination (bullets) -->
+          <div class="swiper-pagination position-relative pt-2 pt-sm-3 mt-4"></div>
+        </div>
+      </section>

@@ -1,0 +1,28 @@
+{% load static i18n navigation_tags wagtailcore_tags %}
+{% get_site_root as site_root %}
+
+
+                <!-- Основные пункты меню -->
+                {% for menuitem in menuitems %}
+                    <li class="nav-item {% if menuitem.show_dropdown %}dropdown{% endif %}">
+                        {% if menuitem.show_dropdown %}
+                        <!-- Если пункт меню раскрывающийся -->
+                            <a href="{% pageurl menuitem %}" class="nav-link dropdown-toggle {% if menuitem.active %} active{% endif %}" data-bs-toggle="dropdown" aria-current="page">{{ menuitem.title }}</a>
+                            <div class="dropdown-menu p-0">
+                                <div class="d-lg-flex">
+                                    <div class="mega-dropdown-column bg-position-center bg-repeat-0 bg-size-cover rounded-3 rounded-end-0" style="background-image: url({% static 'img/landings.jpg' %}); margin: -1px;"></div>
+                                    <div class="mega-dropdown-column pt-lg-3 pb-lg-4">
+                                        <ul class="list-unstyled mb-0">
+                                            {% top_menu_children parent=menuitem %}
+                                            {# Used to display child menu items #}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        {% else %}
+                        <!-- Иначе пункт меню простой -->
+                            <a href="{% pageurl menuitem %}" class="nav-link {% if menuitem.active %} active{% endif %}">{{ menuitem.title }}</a>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+

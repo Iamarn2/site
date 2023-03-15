@@ -1,0 +1,14 @@
+{% load wagtailroutablepage_tags %}
+<div class="widget">
+    <div class="section-title">
+        <h5>Categories</h5>
+    </div>
+    <ul class="widget-categories">
+        <li>
+            
+            {% for category in work_categories %}
+            <a href="#" class="categorie">{{ category.portfolio_category.name }}</a>
+            {% endfor %}
+        </li>
+    </ul>
+</div>

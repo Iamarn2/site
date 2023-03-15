@@ -1,0 +1,252 @@
+{% load navigation_tags wagtailcore_tags static wagtailuserbar %}
+ <!-- load wagtailfontawesome-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    {% block meta_tag %}
+    <title>
+        {% block title %}
+            {% if page.seo_title %}
+                {{ page.seo_title }}
+            {% else %}
+                {{ page.title }}
+            {% endif %}
+        {% endblock %}
+        {% block title_suffix %}
+            | Презентации на заказ
+        {% endblock %}
+    </title>
+    <meta name="description" content="{{ page.search_description }}" />
+    <meta name="image" content="{{ page.search_image }}" />
+    {% endblock %}
+
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="{% if page.search_description %}{{ page.search_description }}{% endif %}">
+    <meta name="keywords" content="">
+
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    {% block cananical %}
+    {% endblock cananical %}  
+
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
+    <link rel="mask-icon" href="{% static 'favicon/safari-pinned-tab.svg' %}" color="#6366f1">
+    <link rel="shortcut icon" href="{% static 'favicon/favicon.ico' %}">
+    <meta name="msapplication-TileColor" content="#080032">
+    <meta name="msapplication-config" content="{% static 'favicon/browserconfig.xml' %}">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- Vendor Styles-->
+    <link rel="stylesheet" media="screen" href="{% static 'vendor/boxicons/css/boxicons.min.css' %}"/>
+    <link rel="stylesheet" media="screen" href="{% static 'vendor/swiper/swiper-bundle.min.css' %}"/>
+
+    <link rel="stylesheet" media="screen" href="{% static 'vendor/lightgallery/css/lightgallery-bundle.min.css' %}"/>
+    <!-- Для слайдера до/после -->
+    <link rel="stylesheet" media="screen" href="{% static 'vendor/img-comparison-slider/dist/styles.css' %}"/>
+    <!-- Main Theme Styles + Bootstrap -->
+    <link rel="stylesheet" media="screen" href="{% static 'css/theme.min.css' %}">
+    <!-- Плеер для видео в статьях-->
+    <link href="//vjs.zencdn.net/7.10.2/video-js.min.css" rel="stylesheet">
+    <!-- Стили для иконок комментариев -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    {% block extra_css %}
+    {% endblock %}
+
+
+
+    <!-- Page loading styles -->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .4s .2s ease-in-out;
+        transition: all .4s .2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      .dark-mode .page-loading {
+        background-color: #0b0f19;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity .2s ease-in-out;
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #9397ad;
+      }
+      .dark-mode .page-loading-inner > span {
+        color: #fff;
+        opacity: .6;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: .75rem;
+        vertical-align: text-bottom;
+        border: .15em solid #b4b7c9;
+        border-right-color: transparent;
+        border-radius: 50%;
+        -webkit-animation: spinner .75s linear infinite;
+        animation: spinner .75s linear infinite;
+      }
+      .dark-mode .page-spinner {
+        border-color: rgba(255,255,255,.4);
+        border-right-color: transparent;
+      }
+      @-webkit-keyframes spinner {
+        100% {
+          -webkit-transfor<script src="//vjs.zencdn.net/7.10.2/video.min.js"></script>m: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+
+    <!-- Переключатель темной/светлой темы -->
+    <script>
+      let mode = window.localStorage.getItem('mode'),
+          root = document.getElementsByTagName('html')[0];
+      if (mode !== null && mode === 'dark') {
+        root.classList.add('dark-mode');
+      } else {
+        root.classList.remove('dark-mode');
+      }
+    </script>
+
+    <!-- Page loading scripts -->
+    <script>
+      (function () {
+        window.onload = function () {
+          const preloader = document.querySelector('.page-loading');
+          preloader.classList.remove('active');
+          setTimeout(function () {
+            preloader.remove();
+          }, 1000);
+        };
+      })();
+    </script>
+    
+
+    <!-- Google Tag Manager
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-WKV3GT5');
+    </script>
+    -->
+  </head>
+
+
+  <!-- Body -->
+  <body>
+    
+    <!-- Google Tag Manager (noscript)
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKV3GT5" height="0" width="0" style="display: none; visibility: hidden;"></iframe>
+    </noscript>
+    -->
+    <!-- Page loading spinner -->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>Загрузка...</span>
+      </div>
+    </div>
+    
+
+    <!-- Page wrapper for sticky footer -->
+    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+    <main class="page-wrapper">
+
+        {% block header %}
+            {% include "includes/header.html" with parent=site_root calling_page=self %}
+        {% endblock header %}
+
+      <!-- Hero ?? -->
+
+    </main>
+
+    <main>
+        {% block content %}
+        {% endblock content %}  
+    </main>
+
+
+    <!-- Back to top button -->
+    <a href="/#top" class="btn-scroll-top" data-scroll>
+      <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Вверх</span>
+      <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+    </a>
+
+    {% block script %}
+    {% endblock script %}  
+
+    <!-- Vendor Scripts -->
+    <script src="{% static 'vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js' %}"></script>
+    <script src="{% static 'vendor/rellax/rellax.min.js' %}"></script>
+    <!-- Для слайдеров -->
+    <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>    
+    <!-- Для картинок с анимацией -->
+    <script src="{% static 'vendor/@lottiefiles/lottie-player/dist/lottie-player.js' %}"></script>
+
+    <!-- Для галереи на домашней странице не нужны -->
+    <script src="{% static 'vendor/lightgallery/lightgallery.min.js' %}"></script>
+    <script src="{% static 'vendor/lightgallery/plugins/video/lg-video.min.js' %}"></script>   
+    <script src="{% static 'vendor/lightgallery/plugins/fullscreen/lg-fullscreen.min.js' %}"></script>
+    <script src="{% static 'vendor/lightgallery/plugins/zoom/lg-zoom.min.js' %}"></script>
+    <script src="{% static 'vendor/lightgallery/plugins/thumbnail/lg-thumbnail.min.js' %}"></script>
+    <!-- Для слайдера до/после -->
+    <script src="{% static 'vendor/img-comparison-slider/dist/index.js' %}"></script>
+    
+    <!-- Для видео в статьях -->>
+    <script src="//vjs.zencdn.net/7.10.2/video.min.js"></script>
+
+    <!-- Main Theme Script -->
+    <script type="module" src="{% static 'js/theme.min.js' %}"></script>
+
+    <!-- Для комментариев -->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+  </body>
+</html>

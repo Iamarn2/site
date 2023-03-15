@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags wagtailsimplegallery_tags %}
+
+{% block title %}{{ page.seo_title }}{% endblock %}
+{% block metadesc %}{{ page.search_description }}{% endblock %}
+
+{% block content %}
+
+
+        <!-- block results_listing -->>
+        <!--/home/arn/.virtualenvs/mysite/lib/python3.10/site-packages/wagtail/images/templates/wagtailimages/chooser/results.html-->>
+        {% if gallery_tags %}
+        <fieldset >
+            <legend>{Popular Tags}</legend>
+            {% for tag in gallery_tags %}
+                {% if tag.name != current_tag %}
+                    <a class="button button-small button-secondary bicolor button--icon" href="{{ tag.url }}">{{ tag.name }}</a>
+                {% else %}
+                    <a class="button button-small bicolor button--icon" href="{{ tag.url }}">{{ tag.name }}</a>
+                {% endif %}
+            {% endfor %}
+        </fieldset>
+        {% endif %}
+
+              <!-- Page title + Filters -->
+      <section class="container d-md-flex align-items-center justify-content-between pb-3">
+        <h1 class="text-nowrap mb-md-4 pe-md-5">{{ page.title }}</h1>
+        <nav class="overflow-auto">
+            <ul class="nav nav-tabs-alt flex-nowrap border-0">
+              {% for tag in gallery_tags %}  
+              <li class="nav-item">
+                {% if tag.name != current_tag %}
+                <a href="{{ tag.url }}" class="nav-link text-nowrap activ">{{ tag.name }}</a>
+                {% else %}
+                <a href="{{ tag.url }}" class="nav-link text-nowrap">{{ tag.name }}</a>
+                {% endif %}
+            </li>
+              {% endfor %}          
+            </ul>
+        </nav>
+      </section>
+        {% include 'wagtail_simple_gallery/simple_gallery.html' %}
+        
+        {% block results_listing %}
+        <ul class="listing horiz images chooser">
+            {% for image in results %}
+                <li>
+                    <a data-chooser-modal-choice class="image-choice" title="{% if collections %}{{ image.collection.name }} » {% endif %}{{ image.title }}" href="{% if will_select_format %}{% url 'wagtailimages_chooser:select_format' image.id %}{% else %}{% url 'wagtailimages_chooser:chosen' image.id %}{% endif %}">
+                        <div class="image">{% image image max-165x165 class="show-transparency" %}</div>
+                        <h3>{{ image.title }}</h3>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+        {% endblock %}
+
+
+{% endblock %}
+
+
+{% block extra_js %}{% endblock %}

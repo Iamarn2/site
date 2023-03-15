@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static wagtailimages_tags wagtailcore_tags %}
+
+{% block content %}
+
+      <!-- Services -->
+      <section class="container mb-5 pb-2 pb-md-4 pb-lg-5">
+        <div class="card border-0 bg-secondary p-md-5 px-sm-2 pt-4 pb-3">
+          <div class="card-body mx-auto" style="max-width: 860px;">
+            <h2 class="h1 pt-3 text-center pb-md-4"></h2>
+            <h2 class="h1 mb-4 text-center">{{ page.title }}</h2>
+            <p class="mb-4 pb-3 fs-lg text-center text-muted">{{ page.description }}</p>
+
+            <!-- Accordion: Alternative style -->
+            <div class="accordion" id="accordion-services">
+
+
+            {% include "base/block/streamfield.html" %}
+
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- CTA -->
+    <section class="container mt-n1 mt-md-0 pb-5">
+        <div class="row justify-content-center text-center pt-md-3 pb-4 py-lg-5 mb-1">
+        <div class="col-xl-8 col-lg-9 col-md-10">
+            <h2 class="h1 mb-4 mb-lg-4">Хотели бы задать вопрос?</h2>
+            <p class="lead pb-3 mb-3">Мы с радостью с ответим на ваши вопросы.</p>
+            <a href="/kontakty/" class="btn btn-primary shadow-primary btn-lg mb-1">Написать нам</a>
+        </div>
+    </div>
+
+  </section>
+{% include "includes/footer.html" %}
+{% endblock content %}
+
+
+

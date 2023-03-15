@@ -1,0 +1,42 @@
+{% with blocks=page.body %}
+{% load static wagtailcore_tags blogapp_tags %}
+{% for block in blocks %}
+    {% if block.block_type == "intro_text" %}
+    {% include "blog/components/blocks/intro_text.html" with block=block only %}
+    {% elif block.block_type == "h2" %}
+    {% include "blog/components/blocks/h2.html" with block=block only %}
+    {% elif block.block_type == "h4" %}
+    {% include "blog/components/blocks/h4.html" with block=block only %}
+    {% elif block.block_type == "paragraph" %}
+    {% include "blog/components/blocks/paragraph.html" with block=block only %}
+    {% elif block.block_type == "h4_plus" %}
+    {% include "blog/components/blocks/h4_plus.html" with block=block only %}
+    {% elif block.block_type == "h4_minus" %}
+    {% include "blog/components/blocks/h4_minus.html" with block=block only %}
+    {% elif block.block_type == "bullet_list" %}
+            <ul class="mb-4 pb-2 ps-4">
+                {% include "blog/components/blocks/bullet_list.html" with block=block only %}
+            </ul>
+    {% elif block.block_type == "image" %}
+            <div class="mb-4 pb-2">
+                {% include "blog/components/blocks/image.html" with block=block only %}
+            </div>
+    {% elif block.block_type == "video" %}
+            <div class="gallery mb-4 pb-2" data-video="true">
+                {% include "blog/components/blocks/video.html" with block=block only %}
+            </div>
+    {% elif block.block_type == "video_upload" %}
+            <div class="gallery mb-4 pb-2" data-video="true">
+                {% include "blog/components/blocks/video_upload.html" with block=block only %}
+            </div>
+    {% elif block.block_type == "quote" %}
+    {% include "blog/components/blocks/quote.html" with block=block only %}
+    {% elif block.block_type == 'image_carousel' %}
+    {% include 'blog/components/blocks/image_carousel.html' with block=block only %}
+    {% else %}
+    <section class="block-{{block.block_type}}">
+        {{  block }}
+    </section>
+    {% endif %}
+{% endfor %}
+{% endwith %}
